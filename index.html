@@ -32,34 +32,34 @@ body{
 body::before{
     content:"";
     position:fixed;
-    width:420px;
-    height:420px;
+    width:520px;
+    height:520px;
     background:rgba(110,90,255,.08);
-    filter:blur(120px);
+    filter:blur(140px);
     border-radius:50%;
-    top:-150px;
-    right:-150px;
+    top:-180px;
+    right:-180px;
     pointer-events:none;
 }
 
 .container{
-    width:min(1050px,92%);
+    width:min(1180px,calc(100% - 80px));
     margin:auto;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav{
     position:sticky;
     top:0;
     z-index:100;
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(20px);
     background:rgba(7,9,13,.72);
     border-bottom:1px solid rgba(255,255,255,.07);
 }
 
 .nav-inner{
-    height:70px;
+    height:72px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -68,8 +68,8 @@ nav{
 .logo{
     font-family:'Space Grotesk',sans-serif;
     font-weight:700;
-    font-size:20px;
-    letter-spacing:-.5px;
+    font-size:21px;
+    letter-spacing:-.6px;
 }
 
 .logo span{
@@ -78,7 +78,7 @@ nav{
 
 .nav-btn{
     border:1px solid rgba(255,255,255,.12);
-    padding:9px 15px;
+    padding:9px 16px;
     border-radius:30px;
     color:#fff;
     text-decoration:none;
@@ -89,21 +89,22 @@ nav{
 .nav-btn:hover{
     background:#fff;
     color:#08090c;
+    transform:translateY(-2px);
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
-    min-height:92vh;
+    min-height:90vh;
     display:flex;
     align-items:center;
-    padding:80px 0;
+    padding:90px 0;
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.35fr .75fr;
-    gap:70px;
+    grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
+    gap:90px;
     align-items:center;
 }
 
@@ -112,38 +113,38 @@ nav{
     font-size:13px;
     letter-spacing:2px;
     text-transform:uppercase;
-    margin-bottom:18px;
+    margin-bottom:20px;
     font-weight:600;
 }
 
 .hero h1{
     font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(45px,7vw,82px);
-    line-height:.95;
-    letter-spacing:-4px;
-    margin-bottom:25px;
+    font-size:clamp(54px,6.5vw,88px);
+    line-height:.93;
+    letter-spacing:-5px;
+    margin-bottom:27px;
 }
 
 .hero h1 span{
     display:block;
-    background:linear-gradient(110deg,#fff,#a9a0ff,#7770ff);
+    background:linear-gradient(110deg,#fff,#aaa0ff,#7770ff);
     -webkit-background-clip:text;
     color:transparent;
 }
 
 .department{
     font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(17px,2.2vw,25px);
+    font-size:clamp(18px,2vw,25px);
     color:#dedbea;
     font-weight:500;
-    max-width:650px;
-    margin-bottom:10px;
+    max-width:720px;
+    margin-bottom:9px;
 }
 
 .university{
     font-family:'Space Grotesk',sans-serif;
     color:#9d8cff;
-    font-size:18px;
+    font-size:19px;
     font-weight:600;
     letter-spacing:.3px;
 }
@@ -152,7 +153,7 @@ nav{
     display:flex;
     gap:12px;
     flex-wrap:wrap;
-    margin-top:32px;
+    margin-top:34px;
 }
 
 .btn{
@@ -172,18 +173,20 @@ nav{
 }
 
 .btn:hover{
-    transform:translateY(-2px);
+    transform:translateY(-3px);
     border-color:#8d80ff;
 }
 
-/* PROFILE IMAGE */
+/* ================= PROFILE ================= */
 
 .profile-card{
     position:relative;
     padding:9px;
-    border-radius:28px;
+    border-radius:30px;
     background:linear-gradient(145deg,#6f63ff,#171922,#333);
-    box-shadow:0 25px 80px rgba(0,0,0,.55);
+    box-shadow:0 25px 90px rgba(0,0,0,.55);
+    max-width:410px;
+    margin-left:auto;
 }
 
 .profile-card img{
@@ -191,7 +194,7 @@ nav{
     display:block;
     aspect-ratio:1/1;
     object-fit:cover;
-    border-radius:21px;
+    border-radius:22px;
 }
 
 .profile-tag{
@@ -199,18 +202,18 @@ nav{
     bottom:20px;
     left:20px;
     right:20px;
-    padding:12px 15px;
-    border-radius:13px;
-    background:rgba(7,9,13,.75);
+    padding:13px 16px;
+    border-radius:14px;
+    background:rgba(7,9,13,.76);
     backdrop-filter:blur(15px);
     border:1px solid rgba(255,255,255,.1);
     font-size:12px;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 
 section{
-    padding:95px 0;
+    padding:105px 0;
 }
 
 .section-label{
@@ -224,44 +227,45 @@ section{
 
 .section-title{
     font-family:'Space Grotesk',sans-serif;
-    font-size:clamp(30px,5vw,50px);
-    letter-spacing:-2px;
-    margin-bottom:35px;
+    font-size:clamp(32px,4.5vw,52px);
+    letter-spacing:-2.5px;
+    margin-bottom:38px;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about-box{
     background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
     border:1px solid rgba(255,255,255,.09);
     border-radius:24px;
-    padding:30px;
+    padding:34px;
 }
 
 .about-box p{
     color:#b7b8c1;
-    max-width:800px;
+    max-width:900px;
+    font-size:16px;
 }
 
-/* SKILLS */
+/* ================= SKILLS ================= */
 
 .skills{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:14px;
+    gap:16px;
 }
 
 .skill{
-    min-height:130px;
-    padding:22px;
+    min-height:140px;
+    padding:24px;
     border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
+    border-radius:19px;
     background:rgba(255,255,255,.035);
     transition:.35s;
 }
 
 .skill:hover{
-    transform:translateY(-5px);
+    transform:translateY(-6px);
     border-color:#7c70ff;
     background:rgba(124,112,255,.07);
 }
@@ -269,26 +273,34 @@ section{
 .skill small{
     color:#858691;
     font-size:11px;
+    letter-spacing:.8px;
 }
 
 .skill h3{
     font-family:'Space Grotesk',sans-serif;
-    margin-top:15px;
+    margin-top:16px;
+    font-size:22px;
 }
 
-/* ACHIEVEMENTS */
+/* ================= ACHIEVEMENTS ================= */
 
 .achievement-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:18px;
+    gap:20px;
 }
 
 .achievement{
-    padding:27px;
+    padding:29px;
     border:1px solid rgba(255,255,255,.09);
-    border-radius:21px;
+    border-radius:22px;
     background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+    transition:.3s;
+}
+
+.achievement:hover{
+    transform:translateY(-4px);
+    border-color:rgba(141,128,255,.45);
 }
 
 .achievement-top{
@@ -300,7 +312,7 @@ section{
 
 .achievement h3{
     font-family:'Space Grotesk',sans-serif;
-    font-size:22px;
+    font-size:23px;
 }
 
 .gpa{
@@ -319,7 +331,7 @@ section{
     border:1px solid rgba(255,255,255,.14);
     background:rgba(255,255,255,.05);
     color:#fff;
-    padding:9px 14px;
+    padding:10px 15px;
     border-radius:10px;
     font-size:12px;
     transition:.3s;
@@ -330,19 +342,20 @@ section{
     color:#07090d;
 }
 
-/* ADMISSION */
+/* ================= ADMISSION ================= */
 
 .admission-list{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:12px;
+    gap:13px;
 }
 
 .uni{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 20px;
+    gap:15px;
+    padding:19px 21px;
     border:1px solid rgba(255,255,255,.08);
     background:rgba(255,255,255,.03);
     border-radius:15px;
@@ -359,12 +372,12 @@ section{
     font-weight:600;
 }
 
-/* EMAIL */
+/* ================= CONTACT ================= */
 
 .contact-box{
-    padding:45px 30px;
+    padding:55px 30px;
     text-align:center;
-    border-radius:25px;
+    border-radius:27px;
     border:1px solid rgba(255,255,255,.1);
     background:linear-gradient(145deg,rgba(124,112,255,.10),rgba(255,255,255,.025));
 }
@@ -378,17 +391,56 @@ section{
     font-weight:600;
 }
 
-/* FOOTER */
+/* ================= SOCIAL BUTTONS ================= */
+
+.socials{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:28px;
+}
+
+.social-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    text-decoration:none;
+    color:#fff;
+    padding:11px 18px;
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:13px;
+    background:rgba(255,255,255,.045);
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.social-btn:hover{
+    transform:translateY(-3px);
+    border-color:#8d80ff;
+    background:rgba(124,112,255,.10);
+    box-shadow:0 10px 30px rgba(124,112,255,.10);
+}
+
+.social-icon{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:16px;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-    padding:40px 0;
+    padding:42px 0;
     border-top:1px solid rgba(255,255,255,.07);
     color:#6f7079;
     font-size:12px;
     text-align:center;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
 
 .modal{
     position:fixed;
@@ -421,6 +473,7 @@ footer{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:15px;
     margin-bottom:22px;
 }
 
@@ -431,6 +484,7 @@ footer{
 .close{
     width:35px;
     height:35px;
+    flex-shrink:0;
     border-radius:50%;
     border:1px solid rgba(255,255,255,.12);
     background:#181a21;
@@ -458,28 +512,40 @@ footer{
     margin-top:15px;
 }
 
-/* RESPONSIVE */
+/* ================= DESKTOP ================= */
 
-@media(max-width:800px){
+@media(min-width:1100px){
 
     .hero{
-        min-height:auto;
-        padding:70px 0;
+        min-height:88vh;
+    }
+
+    section{
+        padding:125px 0;
+    }
+
+    .hero-grid{
+        gap:110px;
+    }
+
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+    .container{
+        width:min(94%,700px);
     }
 
     .hero-grid{
         grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .hero h1{
-        font-size:50px;
-        letter-spacing:-3px;
+        gap:50px;
     }
 
     .profile-card{
-        max-width:370px;
         margin:auto;
+        max-width:380px;
     }
 
     .skills{
@@ -490,16 +556,84 @@ footer{
     .admission-list{
         grid-template-columns:1fr;
     }
-
-    section{
-        padding:70px 0;
-    }
 }
 
-@media(max-width:450px){
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .container{
+        width:calc(100% - 34px);
+    }
+
+    .hero{
+        min-height:auto;
+        padding:70px 0;
+    }
+
+    .hero-grid{
+        gap:42px;
+    }
 
     .hero h1{
-        font-size:43px;
+        font-size:48px;
+        letter-spacing:-3px;
+    }
+
+    .department{
+        font-size:17px;
+    }
+
+    .university{
+        font-size:17px;
+    }
+
+    .profile-card{
+        max-width:360px;
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .skills{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .skill{
+        min-height:120px;
+        padding:19px;
+    }
+
+    .achievement{
+        padding:22px;
+    }
+
+    .uni{
+        padding:16px;
+    }
+
+    .uni-name{
+        font-size:14px;
+    }
+
+    .contact-box{
+        padding:40px 20px;
+    }
+
+    .social-btn{
+        padding:10px 15px;
+    }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:430px){
+
+    .hero h1{
+        font-size:42px;
     }
 
     .department{
@@ -510,33 +644,61 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .about-box,
-    .achievement,
-    .contact-box{
-        padding:22px;
+    .achievement-top{
+        flex-direction:column;
+        gap:5px;
     }
+
+    .gpa{
+        font-size:13px;
+    }
+
+    .uni{
+        align-items:flex-start;
+    }
+
+    .uni-name{
+        line-height:1.4;
+    }
+
+    .view-btn{
+        white-space:nowrap;
+    }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <nav>
 <div class="container nav-inner">
-    <div class="logo">P<span>CD.</span></div>
-    <a href="#contact" class="nav-btn">Let's connect ↗</a>
+
+    <div class="logo">
+        P<span>CD.</span>
+    </div>
+
+    <a href="#contact" class="nav-btn">
+        Let's connect ↗
+    </a>
+
 </div>
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <header class="hero">
+
 <div class="container hero-grid">
 
 <div>
 
-    <div class="eyebrow">Personal Portfolio · 2026</div>
+    <div class="eyebrow">
+        Personal Portfolio · 2026
+    </div>
 
     <h1>
         Priojit
@@ -552,8 +714,15 @@ footer{
     </div>
 
     <div class="hero-buttons">
-        <a href="#about" class="btn primary">Explore portfolio ↗</a>
-        <a href="#contact" class="btn">Contact me</a>
+
+        <a href="#about" class="btn primary">
+            Explore portfolio ↗
+        </a>
+
+        <a href="#contact" class="btn">
+            Contact me
+        </a>
+
     </div>
 
 </div>
@@ -561,11 +730,12 @@ footer{
 
 <div class="profile-card">
 
-    <!-- তোমার profile.jpg এখানে থাকবে -->
-    <img src="profile.jpg" alt="Priojit Chandra Das">
+    <img
+        src="profile.jpg"
+        alt="Priojit Chandra Das">
 
     <div class="profile-tag">
-        Applied Statistics & Data Science · University of Dhaka
+        Applied Statistics &amp; Data Science · University of Dhaka
     </div>
 
 </div>
@@ -574,34 +744,49 @@ footer{
 </header>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
+
 <div class="container">
 
-    <div class="section-label">01 · About</div>
-    <div class="section-title">A little about me.</div>
+    <div class="section-label">
+        01 · About
+    </div>
+
+    <div class="section-title">
+        A little about me.
+    </div>
 
     <div class="about-box">
+
         <p>
             I am Priojit Chandra Das, a student of the Department of
             Applied Statistics and Data Science at the University of Dhaka.
             I am interested in statistics, data, programming and building
             practical solutions through technology.
         </p>
+
     </div>
 
 </div>
+
 </section>
 
 
-<!-- SKILLS -->
+<!-- ================= SKILLS ================= -->
 
 <section>
+
 <div class="container">
 
-    <div class="section-label">02 · Skills</div>
-    <div class="section-title">Tools I work with.</div>
+    <div class="section-label">
+        02 · Skills
+    </div>
+
+    <div class="section-title">
+        Tools I work with.
+    </div>
 
     <div class="skills">
 
@@ -628,18 +813,26 @@ footer{
     </div>
 
 </div>
+
 </section>
 
 
-<!-- ACHIEVEMENTS -->
+<!-- ================= ACHIEVEMENTS ================= -->
 
 <section id="achievements">
+
 <div class="container">
 
-    <div class="section-label">03 · Achievements</div>
-    <div class="section-title">Academic milestones.</div>
+    <div class="section-label">
+        03 · Achievements
+    </div>
+
+    <div class="section-title">
+        Academic milestones.
+    </div>
 
     <div class="achievement-grid">
+
 
         <!-- HSC -->
 
@@ -648,17 +841,29 @@ footer{
             <div class="achievement-top">
 
                 <div>
-                    <h3>HSC</h3>
-                    <p>Dhaka Board · With Scholarship</p>
+
+                    <h3>
+                        HSC
+                    </h3>
+
+                    <p>
+                        Dhaka Board · With Scholarship
+                    </p>
+
                 </div>
 
-                <div class="gpa">GPA 5.00</div>
+                <div class="gpa">
+                    GPA 5.00
+                </div>
 
             </div>
 
-            <button class="view-btn"
+            <button
+                class="view-btn"
                 onclick="openModal('hscModal')">
+
                 View Marksheet ↗
+
             </button>
 
         </div>
@@ -671,155 +876,369 @@ footer{
             <div class="achievement-top">
 
                 <div>
-                    <h3>SSC</h3>
-                    <p>Barishal Board · With Scholarship</p>
+
+                    <h3>
+                        SSC
+                    </h3>
+
+                    <p>
+                        Barishal Board · With Scholarship
+                    </p>
+
                 </div>
 
-                <div class="gpa">GPA 5.00</div>
+                <div class="gpa">
+                    GPA 5.00
+                </div>
 
             </div>
 
-            <button class="view-btn"
+            <button
+                class="view-btn"
                 onclick="openModal('sscModal')">
+
                 View Marksheet ↗
+
             </button>
 
         </div>
 
+
     </div>
 
 </div>
+
 </section>
 
 
-<!-- ADMISSION -->
+<!-- ================= ADMISSION ================= -->
 
 <section>
+
 <div class="container">
 
-    <div class="section-label">04 · Admission</div>
-    <div class="section-title">University admission journey.</div>
+    <div class="section-label">
+        04 · Admission
+    </div>
+
+    <div class="section-title">
+        University admission journey.
+    </div>
 
     <div class="admission-list">
 
-        <div class="uni">
-            <span class="uni-name">University of Dhaka</span>
-            <button class="view-btn" onclick="openModal('duModal')">View Result ↗</button>
-        </div>
 
         <div class="uni">
-            <span class="uni-name">BUET</span>
-            <button class="view-btn" onclick="openModal('buetModal')">View Result ↗</button>
+
+            <span class="uni-name">
+                University of Dhaka
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('duModal')">
+
+                View Result ↗
+
+            </button>
+
         </div>
 
-        <div class="uni">
-            <span class="uni-name">KUET</span>
-            <button class="view-btn" onclick="openModal('kuetModal')">View Result ↗</button>
-        </div>
 
         <div class="uni">
-            <span class="uni-name">RUET</span>
-            <button class="view-btn" onclick="openModal('ruetModal')">View Result ↗</button>
+
+            <span class="uni-name">
+                BUET
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('buetModal')">
+
+                View Result ↗
+
+            </button>
+
         </div>
 
-        <div class="uni">
-            <span class="uni-name">BUTEX</span>
-            <button class="view-btn" onclick="openModal('butexModal')">View Result ↗</button>
-        </div>
 
         <div class="uni">
-            <span class="uni-name">Jahangirnagar University</span>
-            <button class="view-btn" onclick="openModal('juModal')">View Result ↗</button>
+
+            <span class="uni-name">
+                KUET
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('kuetModal')">
+
+                View Result ↗
+
+            </button>
+
         </div>
 
-        <div class="uni">
-            <span class="uni-name">Agriculture Universities</span>
-            <button class="view-btn" onclick="openModal('agriModal')">View Result ↗</button>
-        </div>
 
         <div class="uni">
-            <span class="uni-name">Jagannath University</span>
-            <button class="view-btn" onclick="openModal('jnuModal')">View Result ↗</button>
+
+            <span class="uni-name">
+                RUET
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('ruetModal')">
+
+                View Result ↗
+
+            </button>
+
         </div>
 
-        <div class="uni">
-            <span class="uni-name">Rajshahi University</span>
-            <button class="view-btn" onclick="openModal('ruModal')">View Result ↗</button>
-        </div>
 
         <div class="uni">
-            <span class="uni-name">Chittagong University</span>
-            <button class="view-btn" onclick="openModal('cuModal')">View Result ↗</button>
+
+            <span class="uni-name">
+                BUTEX
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('butexModal')">
+
+                View Result ↗
+
+            </button>
+
         </div>
 
+
         <div class="uni">
-            <span class="uni-name">GST</span>
-            <button class="view-btn" onclick="openModal('gstModal')">View Result ↗</button>
+
+            <span class="uni-name">
+                Jahangirnagar University
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('juModal')">
+
+                View Result ↗
+
+            </button>
+
         </div>
+
+
+        <div class="uni">
+
+            <span class="uni-name">
+                Agriculture Universities
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('agriModal')">
+
+                View Result ↗
+
+            </button>
+
+        </div>
+
+
+        <div class="uni">
+
+            <span class="uni-name">
+                Jagannath University
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('jnuModal')">
+
+                View Result ↗
+
+            </button>
+
+        </div>
+
+
+        <div class="uni">
+
+            <span class="uni-name">
+                Rajshahi University
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('ruModal')">
+
+                View Result ↗
+
+            </button>
+
+        </div>
+
+
+        <div class="uni">
+
+            <span class="uni-name">
+                Chittagong University
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('cuModal')">
+
+                View Result ↗
+
+            </button>
+
+        </div>
+
+
+        <div class="uni">
+
+            <span class="uni-name">
+                GST
+            </span>
+
+            <button
+                class="view-btn"
+                onclick="openModal('gstModal')">
+
+                View Result ↗
+
+            </button>
+
+        </div>
+
 
     </div>
 
 </div>
+
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
+
 <div class="container">
 
-    <div class="contact-box">
+<div class="contact-box">
 
-        <div class="section-label">05 · Contact</div>
+    <div class="section-label">
+        05 · Contact
+    </div>
 
-        <div class="section-title">
-            Let's build something<br>
-            worth remembering.
-        </div>
+    <div class="section-title">
+        Let's build something<br>
+        worth remembering.
+    </div>
 
-        <p style="color:#888995;">
-            Have an idea, opportunity or something interesting to discuss?
-        </p>
+    <p style="color:#888995;">
+        Have an idea, opportunity or something interesting to discuss?
+    </p>
 
-        <a class="email" href="mailto:pdas32@isrt.ac.bd">
-            pdas32@isrt.ac.bd ↗
+
+    <a
+        class="email"
+        href="mailto:pdas32@isrt.ac.bd">
+
+        pdas32@isrt.ac.bd ↗
+
+    </a>
+
+
+    <!-- SOCIAL LINKS -->
+
+    <div class="socials">
+
+
+        <a
+            class="social-btn"
+            href="https://www.facebook.com/share/19FiRfYzsx/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <span class="social-icon">
+                f
+            </span>
+
+            Facebook ↗
+
         </a>
+
+
+        <a
+            class="social-btn"
+            href="https://www.instagram.com/priyojit_32?igsh=eXQ0NHUxZWlyOWJl"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <span class="social-icon">
+                ◎
+            </span>
+
+            Instagram ↗
+
+        </a>
+
 
     </div>
 
 </div>
+
+</div>
+
 </section>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
+
     © 2026 Priojit Chandra Das · University of Dhaka
+
 </footer>
 
 
-<!-- ================= MODALS ================= -->
-
-
-<!-- HSC -->
+<!-- ================= HSC MODAL ================= -->
 
 <div class="modal" id="hscModal">
 
 <div class="modal-box">
 
 <div class="modal-head">
-    <h2>HSC · Academic Record</h2>
-    <button class="close" onclick="closeModal('hscModal')">×</button>
+
+    <h2>
+        HSC · Academic Record
+    </h2>
+
+    <button
+        class="close"
+        onclick="closeModal('hscModal')">
+
+        ×
+
+    </button>
+
 </div>
 
 <div class="result-card">
 
-    <strong>GPA 5.00</strong>
+    <strong>
+        GPA 5.00
+    </strong>
 
     <p>
         Dhaka Board<br>
         With Scholarship
     </p>
 
-    <!-- পরে marksheet image বসাবে -->
     <img
         class="marksheet"
         src="hsc-marksheet.jpg"
@@ -828,30 +1247,43 @@ footer{
 </div>
 
 </div>
+
 </div>
 
 
-<!-- SSC -->
+<!-- ================= SSC MODAL ================= -->
 
 <div class="modal" id="sscModal">
 
 <div class="modal-box">
 
 <div class="modal-head">
-    <h2>SSC · Academic Record</h2>
-    <button class="close" onclick="closeModal('sscModal')">×</button>
+
+    <h2>
+        SSC · Academic Record
+    </h2>
+
+    <button
+        class="close"
+        onclick="closeModal('sscModal')">
+
+        ×
+
+    </button>
+
 </div>
 
 <div class="result-card">
 
-    <strong>GPA 5.00</strong>
+    <strong>
+        GPA 5.00
+    </strong>
 
     <p>
         Barishal Board<br>
         With Scholarship
     </p>
 
-    <!-- পরে marksheet image বসাবে -->
     <img
         class="marksheet"
         src="ssc-marksheet.jpg"
@@ -860,203 +1292,484 @@ footer{
 </div>
 
 </div>
+
 </div>
 
 
-<!-- ADMISSION MODALS -->
+<!-- ================= ADMISSION MODALS ================= -->
 
 <div class="modal" id="duModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>University of Dhaka</h2>
-<button class="close" onclick="closeModal('duModal')">×</button>
+
+<h2>
+    University of Dhaka
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('duModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="buetModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>BUET</h2>
-<button class="close" onclick="closeModal('buetModal')">×</button>
+
+<h2>
+    BUET
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('buetModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="kuetModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>KUET</h2>
-<button class="close" onclick="closeModal('kuetModal')">×</button>
+
+<h2>
+    KUET
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('kuetModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="ruetModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>RUET</h2>
-<button class="close" onclick="closeModal('ruetModal')">×</button>
+
+<h2>
+    RUET
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('ruetModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="butexModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>BUTEX</h2>
-<button class="close" onclick="closeModal('butexModal')">×</button>
+
+<h2>
+    BUTEX
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('butexModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="juModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>Jahangirnagar University</h2>
-<button class="close" onclick="closeModal('juModal')">×</button>
+
+<h2>
+    Jahangirnagar University
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('juModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="agriModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>Agriculture Universities</h2>
-<button class="close" onclick="closeModal('agriModal')">×</button>
+
+<h2>
+    Agriculture Universities
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('agriModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="jnuModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>Jagannath University</h2>
-<button class="close" onclick="closeModal('jnuModal')">×</button>
+
+<h2>
+    Jagannath University
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('jnuModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="ruModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>Rajshahi University</h2>
-<button class="close" onclick="closeModal('ruModal')">×</button>
+
+<h2>
+    Rajshahi University
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('ruModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="cuModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>Chittagong University</h2>
-<button class="close" onclick="closeModal('cuModal')">×</button>
+
+<h2>
+    Chittagong University
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('cuModal')">
+
+    ×
+
+</button>
+
 </div>
+
 <div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
 </div>
+
 </div>
+
 </div>
 
 
 <div class="modal" id="gstModal">
+
 <div class="modal-box">
+
 <div class="modal-head">
-<h2>GST Admission</h2>
-<button class="close" onclick="closeModal('gstModal')">×</button>
-</div>
-<div class="result-card">
-<strong>Admission Test Result</strong>
-<p>Result details can be added here later.</p>
-</div>
-</div>
+
+<h2>
+    GST Admission
+</h2>
+
+<button
+    class="close"
+    onclick="closeModal('gstModal')">
+
+    ×
+
+</button>
+
 </div>
 
+<div class="result-card">
+
+<strong>
+    Admission Test Result
+</strong>
+
+<p>
+    Result details can be added here later.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
 function openModal(id){
-    document.getElementById(id).classList.add("active");
+
+    document
+    .getElementById(id)
+    .classList
+    .add("active");
+
     document.body.style.overflow="hidden";
+
 }
+
 
 function closeModal(id){
-    document.getElementById(id).classList.remove("active");
+
+    document
+    .getElementById(id)
+    .classList
+    .remove("active");
+
     document.body.style.overflow="auto";
+
 }
 
-/* বাইরে click করলে modal বন্ধ হবে */
 
-document.querySelectorAll(".modal").forEach(modal=>{
+/* Click outside modal */
+
+document
+.querySelectorAll(".modal")
+.forEach(modal=>{
 
     modal.addEventListener("click",function(e){
 
-        if(e.target === modal){
+        if(e.target===modal){
+
             modal.classList.remove("active");
+
             document.body.style.overflow="auto";
+
         }
 
     });
 
 });
 
-/* ESC চাপলেও বন্ধ হবে */
+
+/* ESC key */
 
 document.addEventListener("keydown",function(e){
 
-    if(e.key === "Escape"){
+    if(e.key==="Escape"){
 
-        document.querySelectorAll(".modal").forEach(modal=>{
+        document
+        .querySelectorAll(".modal")
+        .forEach(modal=>{
+
             modal.classList.remove("active");
+
         });
 
         document.body.style.overflow="auto";
+
     }
 
 });
