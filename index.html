@@ -6,24 +6,27 @@
 
 <title>Priojit Chandra Das — Portfolio</title>
 
-<meta name="description" content="Personal portfolio of Priojit Chandra Das, Applied Statistics and Data Science student at the University of Dhaka.">
+<meta name="description"
+content="Personal portfolio of Priojit Chandra Das — Applied Statistics and Data Science, University of Dhaka.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
-    --bg:#07090d;
-    --surface:#0d1118;
-    --surface2:#111722;
-    --text:#f5f7fb;
-    --muted:#9299a8;
-    --line:rgba(255,255,255,.09);
-    --accent:#8b9cff;
-    --accent2:#c7ceff;
-    --glow:rgba(139,156,255,.18);
-    --radius:24px;
+    --bg:#070910;
+    --bg2:#0b0e17;
+    --card:rgba(255,255,255,.045);
+    --border:rgba(255,255,255,.09);
+    --text:#f4f5f7;
+    --muted:#969baa;
+    --purple:#8b7cff;
+    --blue:#5ea7ff;
+    --cyan:#5de0ff;
+    --green:#6df0a9;
 }
 
 *{
@@ -38,23 +41,25 @@ html{
 
 body{
     background:
-        radial-gradient(circle at 80% 0%, rgba(93,108,255,.10), transparent 30%),
-        radial-gradient(circle at 0% 30%, rgba(111,74,255,.07), transparent 25%),
+        radial-gradient(circle at 15% 15%, rgba(109,91,255,.12), transparent 28%),
+        radial-gradient(circle at 85% 30%, rgba(54,140,255,.08), transparent 28%),
         var(--bg);
     color:var(--text);
-    font-family:"DM Sans",sans-serif;
+    font-family:Inter,sans-serif;
     line-height:1.6;
     overflow-x:hidden;
 }
 
-body:before{
+body::before{
     content:"";
     position:fixed;
     inset:0;
     pointer-events:none;
-    opacity:.025;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
-    z-index:10;
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,black,transparent 85%);
 }
 
 a{
@@ -67,533 +72,587 @@ a{
     margin:auto;
 }
 
+/* NAVBAR */
+
 nav{
-    position:fixed;
-    top:18px;
-    left:50%;
-    transform:translateX(-50%);
-    width:min(1080px,90%);
-    z-index:100;
+    height:80px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:13px 18px;
-    border:1px solid var(--line);
-    background:rgba(8,11,17,.72);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border-radius:18px;
-    box-shadow:0 15px 50px rgba(0,0,0,.25);
+    position:relative;
+    z-index:10;
 }
 
 .logo{
-    font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
+    font-size:25px;
     font-weight:700;
-    letter-spacing:-.5px;
+    letter-spacing:-1px;
 }
 
 .logo span{
-    color:var(--accent);
+    color:var(--purple);
 }
 
-.navlinks{
+.nav-links{
     display:flex;
-    gap:25px;
+    gap:30px;
+    color:#a9acb8;
     font-size:13px;
-    color:#aeb5c4;
 }
 
-.navlinks a{
-    transition:.25s;
+.nav-links a{
+    transition:.3s;
 }
 
-.navlinks a:hover{
+.nav-links a:hover{
     color:white;
 }
 
 .nav-btn{
-    padding:9px 14px;
-    border:1px solid var(--line);
-    border-radius:11px;
-    font-size:12px;
-    background:rgba(255,255,255,.04);
+    border:1px solid var(--border);
+    padding:11px 17px;
+    border-radius:12px;
+    font-size:13px;
+    background:rgba(255,255,255,.025);
+    transition:.3s;
 }
 
+.nav-btn:hover{
+    border-color:rgba(139,124,255,.6);
+    box-shadow:0 0 25px rgba(139,124,255,.12);
+}
+
+/* HERO */
+
 .hero{
-    min-height:100vh;
+    min-height:calc(100vh - 80px);
     display:grid;
-    grid-template-columns:1.15fr .85fr;
-    align-items:center;
+    grid-template-columns:420px 1fr;
     gap:70px;
-    padding-top:100px;
+    align-items:center;
+    padding:65px 0 100px;
+}
+
+.photo-wrap{
+    position:relative;
+}
+
+.photo-glow{
+    position:absolute;
+    width:280px;
+    height:280px;
+    background:var(--purple);
+    filter:blur(100px);
+    opacity:.18;
+    left:40px;
+    top:60px;
+}
+
+.profile-photo{
+    position:relative;
+    width:100%;
+    max-width:420px;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:28px;
+    display:block;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        0 0 70px rgba(110,90,255,.12);
+}
+
+.availability{
+    position:absolute;
+    bottom:18px;
+    left:18px;
+    padding:9px 13px;
+    border-radius:12px;
+    background:rgba(5,8,15,.82);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    font-size:11px;
+    color:#dce0e8;
+}
+
+.dot{
+    display:inline-block;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--green);
+    margin-right:7px;
+    box-shadow:0 0 10px var(--green);
 }
 
 .eyebrow{
     display:inline-flex;
     align-items:center;
-    gap:9px;
-    padding:7px 11px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    background:rgba(255,255,255,.025);
-    color:#aeb6c6;
+    gap:8px;
+    border:1px solid rgba(139,124,255,.25);
+    background:rgba(139,124,255,.07);
+    color:#c5beff;
+    padding:8px 13px;
+    border-radius:100px;
     font-size:11px;
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
-.dot{
-    width:6px;
-    height:6px;
-    background:#7ef0ad;
-    border-radius:50%;
-    box-shadow:0 0 14px #7ef0ad;
+.hero h1{
+    font-family:"Space Grotesk";
+    font-size:clamp(50px,6vw,82px);
+    line-height:.95;
+    letter-spacing:-4px;
+    margin-bottom:24px;
 }
 
-h1{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(48px,7vw,88px);
-    line-height:.94;
-    letter-spacing:-5px;
-    max-width:800px;
-}
-
-h1 span{
-    background:linear-gradient(100deg,#fff 20%,#8999ff 80%);
+.hero h1 span{
+    background:linear-gradient(110deg,#fff 15%,#a99dff 55%,#67b9ff);
     -webkit-background-clip:text;
-    background-clip:text;
     color:transparent;
 }
 
-.hero-text{
-    margin-top:25px;
-    max-width:620px;
-    color:var(--muted);
-    font-size:16px;
+.academic{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:25px;
 }
 
-.hero-text strong{
-    color:#e8ebf2;
+.academic-item{
+    width:max-content;
+    max-width:100%;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.035);
+    padding:10px 15px;
+    border-radius:11px;
+    font-size:13px;
+    color:#dfe1e8;
+}
+
+.academic-item strong{
+    color:#fff;
     font-weight:600;
 }
 
-.actions{
+.hero-desc{
+    max-width:590px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.9;
+}
+
+.buttons{
     display:flex;
     gap:12px;
-    margin-top:32px;
+    margin:28px 0;
     flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:12px 17px;
-    border-radius:13px;
-    font-size:13px;
+    padding:13px 18px;
+    border-radius:12px;
+    font-size:12px;
     font-weight:600;
+    border:1px solid var(--border);
     transition:.3s;
-    border:1px solid var(--line);
 }
 
 .btn-primary{
-    color:#090b10;
-    background:#f4f5f8;
+    background:#f4f5f7;
+    color:#080a10;
 }
 
-.btn-secondary{
-    background:rgba(255,255,255,.035);
-    color:#dce0e8;
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 35px rgba(255,255,255,.15);
 }
 
-.btn:hover{
+.btn-secondary:hover{
+    border-color:var(--purple);
     transform:translateY(-3px);
 }
 
-.hero-card{
-    position:relative;
-    padding:12px;
-    border-radius:30px;
-    background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.025));
-    border:1px solid var(--line);
-    box-shadow:0 30px 100px rgba(0,0,0,.45);
-}
-
-.hero-card:before{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    background:var(--glow);
-    filter:blur(60px);
-    top:-40px;
-    right:-40px;
-}
-
-.hero-card img{
-    position:relative;
-    width:100%;
-    display:block;
-    border-radius:22px;
-    aspect-ratio:1/1.12;
-    object-fit:cover;
-}
-
-.photo-caption{
-    position:absolute;
-    left:27px;
-    right:27px;
-    bottom:27px;
-    padding:13px 15px;
-    background:rgba(7,9,13,.72);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:14px;
-    font-size:11px;
-    color:#c5cad4;
-}
-
-section{
-    padding:120px 0;
-}
-
-.section-label{
-    color:#707888;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:10px;
-    margin-bottom:13px;
-}
-
-.section-title{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(32px,5vw,54px);
-    letter-spacing:-2.5px;
-    line-height:1;
-    margin-bottom:45px;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1.3fr;
-    gap:25px;
-}
-
-.card{
-    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:30px;
-}
-
-.about-main{
-    font-size:17px;
-    color:#b8bfcc;
-}
-
-.about-main strong{
-    color:white;
-}
-
-.info-list{
-    display:grid;
-    gap:20px;
-}
-
-.info-item small{
-    display:block;
-    color:#666e7d;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:9px;
-    margin-bottom:4px;
-}
-
-.info-item p{
-    color:#d8dce5;
-    font-size:14px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin-top:10px;
-}
-
-.stat{
-    min-height:115px;
+.socials{
     display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-}
-
-.stat-number{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:35px;
-    letter-spacing:-2px;
-}
-
-.stat-label{
-    color:#727a88;
-    font-size:11px;
-}
-
-.education{
-    border-left:1px solid var(--line);
-    padding-left:30px;
-}
-
-.education h3{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:25px;
-    margin-bottom:7px;
-}
-
-.education p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-.education .year{
-    display:inline-block;
-    margin-top:20px;
-    color:#8d98ff;
-    font-size:11px;
-    letter-spacing:1px;
-}
-
-.skills{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-}
-
-.skill{
-    min-height:180px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transition:.3s;
-}
-
-.skill:hover{
-    transform:translateY(-6px);
-    border-color:rgba(139,156,255,.35);
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
-}
-
-.skill-icon{
-    font-family:"Space Grotesk",sans-serif;
-    color:#8795ff;
-    font-size:13px;
-}
-
-.skill h3{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:24px;
-}
-
-.skill p{
-    color:#747c8a;
-    font-size:11px;
-}
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-}
-
-.project{
-    min-height:240px;
-    position:relative;
-    overflow:hidden;
-}
-
-.project-number{
-    color:#687080;
-    font-family:"Space Grotesk",sans-serif;
-    font-size:12px;
-}
-
-.project h3{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:27px;
-    margin-top:45px;
-}
-
-.project p{
-    color:#777f8e;
-    font-size:13px;
-    max-width:430px;
-    margin-top:8px;
-}
-
-.coming{
-    color:#8d98ff !important;
-    font-size:10px !important;
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-
-.project-tag{
-    position:absolute;
-    right:25px;
-    top:25px;
-    padding:6px 9px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    font-size:9px;
-    color:#858d9c;
-}
-
-.social-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
+    gap:9px;
 }
 
 .social{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:20px;
-    border:1px solid var(--line);
-    border-radius:17px;
-    background:rgba(255,255,255,.025);
-    color:#b9c0cc;
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--border);
+    border-radius:11px;
+    color:#a9adba;
+    font-size:12px;
     transition:.3s;
 }
 
 .social:hover{
-    transform:translateY(-4px);
     color:white;
-    border-color:rgba(139,156,255,.35);
+    border-color:var(--purple);
+    background:rgba(139,124,255,.08);
+    transform:translateY(-3px);
 }
 
-.social span{
-    color:#687080;
+/* GENERAL */
+
+section{
+    padding:80px 0;
+}
+
+.section-card{
+    border:1px solid var(--border);
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.018)
+    );
+    border-radius:25px;
+    padding:35px;
+    backdrop-filter:blur(15px);
+}
+
+.section-label{
+    color:#9387ff;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:10px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-family:"Space Grotesk";
+    font-size:38px;
+    letter-spacing:-1.5px;
+    margin-bottom:12px;
+}
+
+.section-desc{
+    color:var(--muted);
+    font-size:13px;
+    max-width:620px;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:35px;
+}
+
+.about-text{
+    color:#b2b5bf;
+    font-size:14px;
+    line-height:1.9;
+}
+
+.about-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.mini-card{
+    padding:22px;
+    min-height:160px;
+    border-radius:17px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+}
+
+.mini-icon{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.mini-card h3{
+    font-family:"Space Grotesk";
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.mini-card p{
+    color:var(--muted);
     font-size:11px;
 }
 
-.contact{
+/* SKILLS */
+
+.skills{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-    align-items:stretch;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+    margin-top:30px;
 }
 
-.contact-card{
-    padding:45px;
-    border-radius:28px;
-    border:1px solid var(--line);
-    background:
-        radial-gradient(circle at 100% 0%,rgba(139,156,255,.12),transparent 35%),
-        linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+.skill{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+    border-radius:17px;
+    padding:24px;
+    transition:.35s;
 }
 
-.contact-card h2{
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(34px,5vw,60px);
-    line-height:.95;
-    letter-spacing:-3px;
+.skill:hover{
+    transform:translateY(-6px);
+    border-color:rgba(139,124,255,.35);
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
 }
 
-.contact-card p{
+.skill-symbol{
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:rgba(139,124,255,.1);
+    font-weight:800;
+    margin-bottom:22px;
+    color:#c8c1ff;
+}
+
+.skill h3{
+    font-family:"Space Grotesk";
+    margin-bottom:7px;
+}
+
+.skill p{
     color:var(--muted);
-    margin-top:20px;
-    max-width:450px;
+    font-size:11px;
 }
 
-.contact-info{
+/* ACHIEVEMENTS */
+
+.achievements{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+    margin-top:30px;
+}
+
+.achievement{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+    padding:24px;
+    border-radius:17px;
+    position:relative;
+    overflow:hidden;
+}
+
+.achievement::after{
+    content:"";
+    position:absolute;
+    width:80px;
+    height:80px;
+    background:var(--purple);
+    filter:blur(55px);
+    opacity:.13;
+    right:-20px;
+    top:-20px;
+}
+
+.achievement-icon{
+    font-size:21px;
+    margin-bottom:20px;
+}
+
+.achievement h3{
+    font-family:"Space Grotesk";
+    margin-bottom:15px;
+}
+
+.result{
+    font-size:27px;
+    font-family:"Space Grotesk";
+    font-weight:700;
+    color:#fff;
+}
+
+.result small{
+    color:#777c89;
+    font-size:11px;
+    font-weight:400;
+}
+
+.meta{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+    padding-top:14px;
+    border-top:1px solid rgba(255,255,255,.07);
+    color:#747986;
+    font-size:10px;
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:15px;
+    margin-top:30px;
+}
+
+.project-main{
+    min-height:300px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+    border-radius:19px;
     display:flex;
     flex-direction:column;
+    align-items:center;
     justify-content:center;
+    text-align:center;
+    padding:35px;
+}
+
+.project-icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:rgba(139,124,255,.1);
+    border:1px solid rgba(139,124,255,.2);
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.project-main h3{
+    font-family:"Space Grotesk";
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.project-main p{
+    color:var(--muted);
+    font-size:12px;
+    max-width:350px;
+}
+
+.project-list{
+    display:flex;
+    flex-direction:column;
     gap:15px;
 }
 
-.contact-line{
-    padding:18px;
-    border-bottom:1px solid var(--line);
+.project-small{
+    flex:1;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:22px;
+    background:rgba(255,255,255,.025);
 }
 
-.contact-line small{
-    display:block;
-    color:#626b7b;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:9px;
+.project-small h3{
+    font-family:"Space Grotesk";
+    margin-bottom:7px;
 }
 
-.contact-line a,
-.contact-line span{
-    display:block;
-    margin-top:5px;
-    color:#d9dde6;
-    font-size:14px;
-}
-
-footer{
-    border-top:1px solid var(--line);
-    padding:30px 0 45px;
-    color:#596170;
+.project-small p{
+    color:var(--muted);
     font-size:11px;
 }
 
-.footer-inner{
-    display:flex;
-    justify-content:space-between;
+.tag{
+    display:inline-block;
+    margin-top:14px;
+    font-size:9px;
+    padding:5px 8px;
+    border:1px solid var(--border);
+    border-radius:7px;
+    color:#8e92a0;
+}
+
+/* CONTACT */
+
+.contact{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
     gap:20px;
 }
 
-.reveal{
-    opacity:0;
-    transform:translateY(25px);
-    transition:opacity .7s ease,transform .7s ease;
+.contact-box{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+    border-radius:17px;
+    padding:24px;
 }
 
-.reveal.show{
-    opacity:1;
-    transform:none;
+.contact-box span{
+    color:#777d8c;
+    font-size:10px;
+    display:block;
+    margin-bottom:8px;
 }
 
-@media(max-width:850px){
+.contact-box strong{
+    font-size:13px;
+}
 
-    nav{
-        top:10px;
-        width:94%;
+/* FOOTER */
+
+footer{
+    padding:50px 0;
+    border-top:1px solid rgba(255,255,255,.07);
+    color:#666b78;
+    font-size:10px;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* ANIMATION */
+
+.fade{
+    animation:fadeUp .8s ease both;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
     }
 
-    .navlinks{
-        display:none;
+    .nav-btn{
+        display:block;
     }
 
     .hero{
         grid-template-columns:1fr;
         gap:45px;
-        padding-top:130px;
+        padding-top:40px;
     }
 
-    h1{
-        font-size:clamp(52px,15vw,78px);
-        letter-spacing:-4px;
-    }
-
-    .hero-text{
-        font-size:14px;
-    }
-
-    .hero-card{
-        max-width:520px;
+    .photo-wrap{
+        max-width:390px;
         margin:auto;
+        width:100%;
     }
 
-    section{
-        padding:85px 0;
+    .hero h1{
+        font-size:58px;
     }
 
-    .about-grid,
-    .contact{
+    .about-grid{
         grid-template-columns:1fr;
     }
 
@@ -601,95 +660,139 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .social-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .stats{
+    .achievements{
         grid-template-columns:repeat(2,1fr);
     }
 
     .projects{
         grid-template-columns:1fr;
     }
+
+    .contact{
+        grid-template-columns:1fr;
+    }
 }
 
-@media(max-width:480px){
+@media(max-width:560px){
 
-    .container{
-        width:90%;
+    nav{
+        height:70px;
+    }
+
+    .nav-btn{
+        padding:9px 12px;
     }
 
     .hero{
-        padding-top:115px;
+        min-height:auto;
+        padding:35px 0 70px;
     }
 
-    .hero-card{
-        padding:8px;
+    .hero h1{
+        font-size:49px;
+        letter-spacing:-2.8px;
     }
 
-    .hero-card img{
-        border-radius:18px;
+    .profile-photo{
+        border-radius:22px;
     }
 
-    .photo-caption{
-        left:18px;
-        right:18px;
-        bottom:18px;
+    .academic-item{
+        width:100%;
+        font-size:11px;
     }
 
-    .card{
+    .section-card{
         padding:23px;
         border-radius:20px;
     }
 
-    .skills{
+    .section-title{
+        font-size:31px;
+    }
+
+    .about-cards{
         grid-template-columns:1fr;
     }
 
-    .skill{
-        min-height:145px;
-    }
-
-    .social-grid{
+    .skills,
+    .achievements{
         grid-template-columns:1fr;
     }
 
-    .contact-card{
-        padding:28px;
+    .skill,
+    .achievement{
+        padding:21px;
     }
 
-    .footer-inner{
+    section{
+        padding:45px 0;
+    }
+
+    footer{
         flex-direction:column;
+        gap:10px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<nav>
-    <a href="#top" class="logo">PD<span>.</span></a>
+<div class="container">
 
-    <div class="navlinks">
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        PD<span>.</span>
+    </div>
+
+    <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </div>
 
-    <a href="#contact" class="nav-btn">Let's connect ↗</a>
+    <a href="#contact" class="nav-btn">
+        Let's Connect ↗
+    </a>
+
 </nav>
 
-<main id="top">
 
-<section class="hero container">
+<!-- HERO -->
 
-    <div class="hero-content reveal">
+<main class="hero">
+
+    <div class="photo-wrap fade">
+
+        <div class="photo-glow"></div>
+
+        <!-- তোমার ছবি -->
+        <img
+            src="profile.jpg"
+            alt="Priojit Chandra Das"
+            class="profile-photo"
+        >
+
+        <div class="availability">
+            <span class="dot"></span>
+            Exploring • Learning • Building
+        </div>
+
+    </div>
+
+
+    <div class="fade">
 
         <div class="eyebrow">
-            <span class="dot"></span>
-            Available for meaningful opportunities
+            ✦ Applied Statistics & Data Science
         </div>
 
         <h1>
@@ -697,387 +800,588 @@ footer{
             <span>Chandra Das.</span>
         </h1>
 
-        <p class="hero-text">
-            <strong>Applied Statistics & Data Science student</strong>
-            at the University of Dhaka, exploring the intersection of
-            data, technology and thoughtful problem solving.
+
+        <div class="academic">
+
+            <div class="academic-item">
+                ◈ &nbsp;
+                <strong>
+                    Department of Applied Statistics and Data Science
+                </strong>
+            </div>
+
+            <div class="academic-item">
+                ◇ &nbsp;
+                <strong>
+                    University of Dhaka
+                </strong>
+            </div>
+
+        </div>
+
+
+        <p class="hero-desc">
+            An undergraduate student exploring statistics, data,
+            programming and technology — turning curiosity into
+            meaningful ideas and practical solutions.
         </p>
 
-        <div class="actions">
-            <a href="#about" class="btn btn-primary">Explore portfolio ↗</a>
-            <a href="#contact" class="btn btn-secondary">Get in touch</a>
-        </div>
 
-    </div>
+        <div class="buttons">
 
-    <div class="hero-card reveal">
+            <a href="#projects" class="btn btn-primary">
+                Explore My Work ↗
+            </a>
 
-        <img src="profile.jpg" alt="Priojit Chandra Das">
-
-        <div class="photo-caption">
-            Priojit Chandra Das · University of Dhaka
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="about">
-
-<div class="container">
-
-    <div class="section-label">01 — About</div>
-
-    <h2 class="section-title">A little about me.</h2>
-
-    <div class="about-grid">
-
-        <div class="card about-main reveal">
-
-            <p>
-                I'm <strong>Priojit Chandra Das</strong>, an undergraduate
-                student of <strong>Applied Statistics and Data Science</strong>
-                at the University of Dhaka.
-            </p>
-
-            <br>
-
-            <p>
-                I'm building my foundation in programming, statistics and
-                data-driven thinking while continuously learning how
-                technology can turn information into meaningful solutions.
-            </p>
+            <a href="#contact" class="btn btn-secondary">
+                Let's Connect
+            </a>
 
         </div>
 
-        <div class="card education reveal">
 
-            <div class="info-list">
+        <!-- SOCIAL LINKS -->
 
-                <div class="info-item">
-                    <small>University</small>
-                    <p>University of Dhaka</p>
-                </div>
+        <div class="socials">
 
-                <div class="info-item">
-                    <small>Department</small>
-                    <p>Applied Statistics and Data Science</p>
-                </div>
+            <!-- এখানে নিজের links বসাবে -->
 
-                <div class="info-item">
-                    <small>Focus</small>
-                    <p>Statistics · Data · Programming · Problem Solving</p>
-                </div>
+            <a
+                href="https://github.com/priojitdas"
+                class="social"
+                target="_blank"
+                title="GitHub"
+            >
+                GH
+            </a>
 
-            </div>
+            <a
+                href="#"
+                class="social"
+                target="_blank"
+                title="LinkedIn"
+            >
+                in
+            </a>
 
-            <span class="year">UNDERGRADUATE STUDENT</span>
+            <a
+                href="#"
+                class="social"
+                target="_blank"
+                title="Facebook"
+            >
+                f
+            </a>
+
+            <a
+                href="#"
+                class="social"
+                target="_blank"
+                title="Instagram"
+            >
+                ◎
+            </a>
+
+            <a
+                href="mailto:your.email@example.com"
+                class="social"
+                title="Email"
+            >
+                @
+            </a>
 
         </div>
 
     </div>
-
-    <div class="stats">
-
-        <div class="card stat reveal">
-            <div class="stat-number">04</div>
-            <div class="stat-label">Core Skills</div>
-        </div>
-
-        <div class="card stat reveal">
-            <div class="stat-number">01</div>
-            <div class="stat-label">University</div>
-        </div>
-
-        <div class="card stat reveal">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Things to learn</div>
-        </div>
-
-        <div class="card stat reveal">
-            <div class="stat-number">01</div>
-            <div class="stat-label">Journey</div>
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-
-<section id="education">
-
-<div class="container">
-
-    <div class="section-label">02 — Education</div>
-
-    <h2 class="section-title">Where I'm learning.</h2>
-
-    <div class="card reveal">
-
-        <div class="education">
-
-            <h3>University of Dhaka</h3>
-
-            <p>
-                Department of Applied Statistics and Data Science
-            </p>
-
-            <span class="year">
-                UNDERGRADUATE · DHAKA, BANGLADESH
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-
-<section id="skills">
-
-<div class="container">
-
-    <div class="section-label">03 — Skills</div>
-
-    <h2 class="section-title">Tools I work with.</h2>
-
-    <div class="skills">
-
-        <div class="card skill reveal">
-            <div class="skill-icon">01 / C</div>
-            <h3>C</h3>
-            <p>Programming fundamentals</p>
-        </div>
-
-        <div class="card skill reveal">
-            <div class="skill-icon">02 / SQL</div>
-            <h3>SQL</h3>
-            <p>Data & database foundations</p>
-        </div>
-
-        <div class="card skill reveal">
-            <div class="skill-icon">03 / PY</div>
-            <h3>Python</h3>
-            <p>Programming & data exploration</p>
-        </div>
-
-        <div class="card skill reveal">
-            <div class="skill-icon">04 / HTML</div>
-            <h3>HTML</h3>
-            <p>Web structure & interfaces</p>
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-
-<section id="projects">
-
-<div class="container">
-
-    <div class="section-label">04 — Selected work</div>
-
-    <h2 class="section-title">Work in progress.</h2>
-
-    <div class="projects">
-
-        <!--
-        FUTURE PROJECT TEMPLATE
-
-        Copy this card whenever you want to add a project.
-
-        <div class="card project reveal">
-            <span class="project-number">01</span>
-            <span class="project-tag">Python</span>
-            <h3>Project Name</h3>
-            <p>Short description of your project.</p>
-        </div>
-        -->
-
-        <div class="card project reveal">
-
-            <span class="project-number">01</span>
-
-            <span class="project-tag">Coming soon</span>
-
-            <h3>Projects are coming.</h3>
-
-            <p>
-                This space will evolve with projects, experiments and
-                things I build while learning.
-            </p>
-
-            <p class="coming">
-                Stay tuned · More soon
-            </p>
-
-        </div>
-
-        <div class="card project reveal">
-
-            <span class="project-number">02</span>
-
-            <span class="project-tag">Future</span>
-
-            <h3>More to build.</h3>
-
-            <p>
-                Data analysis, programming experiments and creative
-                projects will find their place here.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-
-<section id="social">
-
-<div class="container">
-
-    <div class="section-label">05 — Around the web</div>
-
-    <h2 class="section-title">Let's stay connected.</h2>
-
-    <div class="social-grid">
-
-        <!-- Replace # with your actual links later -->
-
-        <a class="social reveal" href="#" target="_blank">
-            <strong>GitHub</strong>
-            <span>↗</span>
-        </a>
-
-        <a class="social reveal" href="#" target="_blank">
-            <strong>LinkedIn</strong>
-            <span>↗</span>
-        </a>
-
-        <a class="social reveal" href="#" target="_blank">
-            <strong>Facebook</strong>
-            <span>↗</span>
-        </a>
-
-        <a class="social reveal" href="#" target="_blank">
-            <strong>Instagram</strong>
-            <span>↗</span>
-        </a>
-
-    </div>
-
-</div>
-</section>
-
-
-<section id="contact">
-
-<div class="container">
-
-    <div class="section-label">06 — Contact</div>
-
-    <div class="contact">
-
-        <div class="contact-card reveal">
-
-            <h2>
-                Let's build<br>
-                something worth<br>
-                remembering.
-            </h2>
-
-            <p>
-                Whether it's an interesting idea, collaboration or simply
-                a conversation about data and technology — feel free to reach out.
-            </p>
-
-        </div>
-
-        <div class="card contact-info reveal">
-
-            <div class="contact-line">
-                <small>Name</small>
-                <span>Priojit Chandra Das</span>
-            </div>
-
-            <div class="contact-line">
-                <small>University</small>
-                <span>University of Dhaka</span>
-            </div>
-
-            <div class="contact-line">
-                <small>Department</small>
-                <span>Applied Statistics and Data Science</span>
-            </div>
-
-            <div class="contact-line">
-                <small>Email</small>
-                <span>Add your email here</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-</section>
 
 </main>
 
 
-<footer>
 
-<div class="container footer-inner">
+<!-- ABOUT -->
 
-    <div>
-        © <span id="year"></span> Priojit Chandra Das
+<section id="about">
+
+<div class="section-card">
+
+    <div class="section-label">
+        ✦ About Me
     </div>
 
-    <div>
-        Built with curiosity · Dhaka, Bangladesh
+    <div class="about-grid">
+
+        <div>
+
+            <h2 class="section-title">
+                Get to know me.
+            </h2>
+
+            <p class="about-text">
+                I am Priojit Chandra Das, an undergraduate student
+                of Applied Statistics and Data Science at the
+                University of Dhaka.
+                <br><br>
+                I am interested in learning programming, statistics,
+                data analysis and building useful digital experiences.
+                This portfolio will grow along with my journey.
+            </p>
+
+        </div>
+
+
+        <div class="about-cards">
+
+            <div class="mini-card">
+
+                <div class="mini-icon">◫</div>
+
+                <h3>Learning</h3>
+
+                <p>
+                    Always learning new concepts,
+                    tools and technologies.
+                </p>
+
+            </div>
+
+
+            <div class="mini-card">
+
+                <div class="mini-icon">◈</div>
+
+                <h3>Analyzing</h3>
+
+                <p>
+                    Exploring statistics and
+                    data-driven thinking.
+                </p>
+
+            </div>
+
+
+            <div class="mini-card">
+
+                <div class="mini-icon">&lt;/&gt;</div>
+
+                <h3>Building</h3>
+
+                <p>
+                    Turning ideas into practical
+                    digital projects.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
 </div>
 
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="section-card">
+
+    <div class="section-label">
+        ✦ Skills
+    </div>
+
+    <h2 class="section-title">
+        What I work with.
+    </h2>
+
+    <p class="section-desc">
+        Technologies and tools I am currently learning and working with.
+    </p>
+
+
+    <div class="skills">
+
+        <div class="skill">
+
+            <div class="skill-symbol">
+                C
+            </div>
+
+            <h3>C</h3>
+
+            <p>
+                Programming fundamentals
+                & problem solving
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-symbol">
+                SQL
+            </div>
+
+            <h3>SQL</h3>
+
+            <p>
+                Database queries
+                & data management
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-symbol">
+                Py
+            </div>
+
+            <h3>Python</h3>
+
+            <p>
+                Programming &
+                data analysis
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-symbol">
+                &lt;/&gt;
+            </div>
+
+            <h3>HTML</h3>
+
+            <p>
+                Web structure
+                & modern markup
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements">
+
+<div class="section-card">
+
+    <div class="section-label">
+        ✦ Achievements
+    </div>
+
+    <h2 class="section-title">
+        Academic milestones.
+    </h2>
+
+    <p class="section-desc">
+        A place to showcase academic results, admission achievements
+        and milestones.
+    </p>
+
+
+    <div class="achievements">
+
+
+        <!-- SSC -->
+
+        <div class="achievement">
+
+            <div class="achievement-icon">
+                🎓
+            </div>
+
+            <h3>SSC</h3>
+
+            <!-- পরে নিজের result বসাবে -->
+
+            <div class="result">
+                Add Result
+                <small>/ 5.00</small>
+            </div>
+
+            <div class="meta">
+                <span>Board</span>
+                <span>Year</span>
+            </div>
+
+        </div>
+
+
+        <!-- HSC -->
+
+        <div class="achievement">
+
+            <div class="achievement-icon">
+                🎓
+            </div>
+
+            <h3>HSC</h3>
+
+            <div class="result">
+                Add Result
+                <small>/ 5.00</small>
+            </div>
+
+            <div class="meta">
+                <span>Board</span>
+                <span>Year</span>
+            </div>
+
+        </div>
+
+
+        <!-- ADMISSION -->
+
+        <div class="achievement">
+
+            <div class="achievement-icon">
+                ✦
+            </div>
+
+            <h3>Admission Test</h3>
+
+            <div class="result">
+                Add Result
+            </div>
+
+            <div class="meta">
+                <span>Exam</span>
+                <span>Year</span>
+            </div>
+
+        </div>
+
+
+        <!-- UNIVERSITY -->
+
+        <div class="achievement">
+
+            <div class="achievement-icon">
+                ◆
+            </div>
+
+            <h3>University</h3>
+
+            <div class="result" style="font-size:19px;">
+                University of Dhaka
+            </div>
+
+            <div class="meta">
+                <span>ASDS</span>
+                <span>Current</span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="section-card">
+
+    <div class="section-label">
+        ✦ Projects
+    </div>
+
+    <h2 class="section-title">
+        Work in progress.
+    </h2>
+
+    <p class="section-desc">
+        Projects will appear here as I build and learn.
+    </p>
+
+
+    <div class="projects">
+
+
+        <div class="project-main">
+
+            <div class="project-icon">
+                ✦
+            </div>
+
+            <h3>
+                Projects are coming soon.
+            </h3>
+
+            <p>
+                I am currently working on my first set of projects.
+                Stay tuned for updates.
+            </p>
+
+        </div>
+
+
+        <div class="project-list">
+
+            <div class="project-small">
+
+                <h3>
+                    Data Analysis
+                </h3>
+
+                <p>
+                    Statistical analysis,
+                    visualization and data projects.
+                </p>
+
+                <span class="tag">
+                    COMING SOON
+                </span>
+
+            </div>
+
+
+            <div class="project-small">
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Personal websites and
+                    interactive web experiences.
+                </p>
+
+                <span class="tag">
+                    COMING SOON
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-card">
+
+    <div class="section-label">
+        ✦ Contact
+    </div>
+
+    <div class="contact">
+
+        <div>
+
+            <h2 class="section-title">
+                Let's Connect.
+            </h2>
+
+            <p class="section-desc">
+                Have an idea, opportunity or simply want to connect?
+                Feel free to reach out.
+            </p>
+
+            <br>
+
+            <div class="socials">
+
+                <a href="#" class="social">
+                    GH
+                </a>
+
+                <a href="#" class="social">
+                    in
+                </a>
+
+                <a href="#" class="social">
+                    f
+                </a>
+
+                <a href="#" class="social">
+                    ◎
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="contact-box">
+
+                <span>EMAIL</span>
+
+                <strong>
+                    your.email@example.com
+                </strong>
+
+            </div>
+
+            <br>
+
+            <div class="contact-box">
+
+                <span>LOCATION</span>
+
+                <strong>
+                    Dhaka, Bangladesh
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <span>
+        © 2026 Priojit Chandra Das. All rights reserved.
+    </span>
+
+    <span>
+        Designed & Built with ✦
+    </span>
+
 </footer>
 
 
-<script>
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-const observer =
-    new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("show");
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    }, {
-        threshold:0.12
-    });
-
-document.querySelectorAll(".reveal").forEach(el => {
-    observer.observe(el);
-});
-
-</script>
+</div>
 
 </body>
 </html>
