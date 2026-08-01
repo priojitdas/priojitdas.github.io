@@ -4,30 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Priojit Chandra Das — Portfolio</title>
+<title>Priojit Chandra Das | Portfolio</title>
 
-<meta name="description"
-content="Personal portfolio of Priojit Chandra Das — Applied Statistics and Data Science, University of Dhaka.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Personal portfolio of Priojit Chandra Das, Department of Applied Statistics and Data Science, University of Dhaka">
 
 <style>
-
-:root{
-    --bg:#070910;
-    --bg2:#0b0e17;
-    --card:rgba(255,255,255,.045);
-    --border:rgba(255,255,255,.09);
-    --text:#f4f5f7;
-    --muted:#969baa;
-    --purple:#8b7cff;
-    --blue:#5ea7ff;
-    --cyan:#5de0ff;
-    --green:#6df0a9;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 *{
     margin:0;
@@ -40,12 +22,9 @@ html{
 }
 
 body{
-    background:
-        radial-gradient(circle at 15% 15%, rgba(109,91,255,.12), transparent 28%),
-        radial-gradient(circle at 85% 30%, rgba(54,140,255,.08), transparent 28%),
-        var(--bg);
-    color:var(--text);
-    font-family:Inter,sans-serif;
+    background:#07090d;
+    color:#f5f5f5;
+    font-family:'DM Sans',sans-serif;
     line-height:1.6;
     overflow-x:hidden;
 }
@@ -53,333 +32,215 @@ body{
 body::before{
     content:"";
     position:fixed;
-    inset:0;
+    width:420px;
+    height:420px;
+    background:rgba(110,90,255,.08);
+    filter:blur(120px);
+    border-radius:50%;
+    top:-150px;
+    right:-150px;
     pointer-events:none;
-    background-image:
-        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-    background-size:70px 70px;
-    mask-image:linear-gradient(to bottom,black,transparent 85%);
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
 }
 
 .container{
-    width:min(1120px,92%);
+    width:min(1050px,92%);
     margin:auto;
 }
 
 /* NAVBAR */
 
 nav{
-    height:80px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(18px);
+    background:rgba(7,9,13,.72);
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.nav-inner{
+    height:70px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    position:relative;
-    z-index:10;
 }
 
 .logo{
-    font-family:"Space Grotesk";
-    font-size:25px;
+    font-family:'Space Grotesk',sans-serif;
     font-weight:700;
-    letter-spacing:-1px;
+    font-size:20px;
+    letter-spacing:-.5px;
 }
 
 .logo span{
-    color:var(--purple);
-}
-
-.nav-links{
-    display:flex;
-    gap:30px;
-    color:#a9acb8;
-    font-size:13px;
-}
-
-.nav-links a{
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:white;
+    color:#9d8cff;
 }
 
 .nav-btn{
-    border:1px solid var(--border);
-    padding:11px 17px;
-    border-radius:12px;
+    border:1px solid rgba(255,255,255,.12);
+    padding:9px 15px;
+    border-radius:30px;
+    color:#fff;
+    text-decoration:none;
     font-size:13px;
-    background:rgba(255,255,255,.025);
     transition:.3s;
 }
 
 .nav-btn:hover{
-    border-color:rgba(139,124,255,.6);
-    box-shadow:0 0 25px rgba(139,124,255,.12);
+    background:#fff;
+    color:#08090c;
 }
 
 /* HERO */
 
 .hero{
-    min-height:calc(100vh - 80px);
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    padding:80px 0;
+}
+
+.hero-grid{
     display:grid;
-    grid-template-columns:420px 1fr;
+    grid-template-columns:1.35fr .75fr;
     gap:70px;
     align-items:center;
-    padding:65px 0 100px;
-}
-
-.photo-wrap{
-    position:relative;
-}
-
-.photo-glow{
-    position:absolute;
-    width:280px;
-    height:280px;
-    background:var(--purple);
-    filter:blur(100px);
-    opacity:.18;
-    left:40px;
-    top:60px;
-}
-
-.profile-photo{
-    position:relative;
-    width:100%;
-    max-width:420px;
-    aspect-ratio:4/5;
-    object-fit:cover;
-    border-radius:28px;
-    display:block;
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.55),
-        0 0 70px rgba(110,90,255,.12);
-}
-
-.availability{
-    position:absolute;
-    bottom:18px;
-    left:18px;
-    padding:9px 13px;
-    border-radius:12px;
-    background:rgba(5,8,15,.82);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.1);
-    font-size:11px;
-    color:#dce0e8;
-}
-
-.dot{
-    display:inline-block;
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:var(--green);
-    margin-right:7px;
-    box-shadow:0 0 10px var(--green);
 }
 
 .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    border:1px solid rgba(139,124,255,.25);
-    background:rgba(139,124,255,.07);
-    color:#c5beff;
-    padding:8px 13px;
-    border-radius:100px;
-    font-size:11px;
-    margin-bottom:22px;
+    color:#a79aff;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    font-weight:600;
 }
 
 .hero h1{
-    font-family:"Space Grotesk";
-    font-size:clamp(50px,6vw,82px);
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(45px,7vw,82px);
     line-height:.95;
     letter-spacing:-4px;
-    margin-bottom:24px;
+    margin-bottom:25px;
 }
 
 .hero h1 span{
-    background:linear-gradient(110deg,#fff 15%,#a99dff 55%,#67b9ff);
+    display:block;
+    background:linear-gradient(110deg,#fff,#a9a0ff,#7770ff);
     -webkit-background-clip:text;
     color:transparent;
 }
 
-.academic{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-bottom:25px;
+.department{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(17px,2.2vw,25px);
+    color:#dedbea;
+    font-weight:500;
+    max-width:650px;
+    margin-bottom:10px;
 }
 
-.academic-item{
-    width:max-content;
-    max-width:100%;
-    border:1px solid rgba(255,255,255,.1);
-    background:rgba(255,255,255,.035);
-    padding:10px 15px;
-    border-radius:11px;
-    font-size:13px;
-    color:#dfe1e8;
-}
-
-.academic-item strong{
-    color:#fff;
+.university{
+    font-family:'Space Grotesk',sans-serif;
+    color:#9d8cff;
+    font-size:18px;
     font-weight:600;
+    letter-spacing:.3px;
 }
 
-.hero-desc{
-    max-width:590px;
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.9;
-}
-
-.buttons{
+.hero-buttons{
     display:flex;
     gap:12px;
-    margin:28px 0;
     flex-wrap:wrap;
+    margin-top:32px;
 }
 
 .btn{
-    padding:13px 18px;
-    border-radius:12px;
-    font-size:12px;
-    font-weight:600;
-    border:1px solid var(--border);
-    transition:.3s;
-}
-
-.btn-primary{
-    background:#f4f5f7;
-    color:#080a10;
-}
-
-.btn-primary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 35px rgba(255,255,255,.15);
-}
-
-.btn-secondary:hover{
-    border-color:var(--purple);
-    transform:translateY(-3px);
-}
-
-.socials{
-    display:flex;
-    gap:9px;
-}
-
-.social{
-    width:40px;
-    height:40px;
-    display:grid;
-    place-items:center;
-    border:1px solid var(--border);
-    border-radius:11px;
-    color:#a9adba;
-    font-size:12px;
-    transition:.3s;
-}
-
-.social:hover{
+    text-decoration:none;
     color:white;
-    border-color:var(--purple);
-    background:rgba(139,124,255,.08);
-    transform:translateY(-3px);
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.05);
+    padding:12px 20px;
+    border-radius:12px;
+    font-size:14px;
+    transition:.3s;
 }
 
-/* GENERAL */
+.btn.primary{
+    background:#f5f5f5;
+    color:#08090c;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    border-color:#8d80ff;
+}
+
+/* PROFILE IMAGE */
+
+.profile-card{
+    position:relative;
+    padding:9px;
+    border-radius:28px;
+    background:linear-gradient(145deg,#6f63ff,#171922,#333);
+    box-shadow:0 25px 80px rgba(0,0,0,.55);
+}
+
+.profile-card img{
+    width:100%;
+    display:block;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:21px;
+}
+
+.profile-tag{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    padding:12px 15px;
+    border-radius:13px;
+    background:rgba(7,9,13,.75);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    font-size:12px;
+}
+
+/* SECTIONS */
 
 section{
-    padding:80px 0;
-}
-
-.section-card{
-    border:1px solid var(--border);
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.045),
-        rgba(255,255,255,.018)
-    );
-    border-radius:25px;
-    padding:35px;
-    backdrop-filter:blur(15px);
+    padding:95px 0;
 }
 
 .section-label{
-    color:#9387ff;
+    color:#8175ff;
+    font-size:12px;
     text-transform:uppercase;
     letter-spacing:2px;
-    font-size:10px;
     font-weight:700;
     margin-bottom:12px;
 }
 
 .section-title{
-    font-family:"Space Grotesk";
-    font-size:38px;
-    letter-spacing:-1.5px;
-    margin-bottom:12px;
-}
-
-.section-desc{
-    color:var(--muted);
-    font-size:13px;
-    max-width:620px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(30px,5vw,50px);
+    letter-spacing:-2px;
+    margin-bottom:35px;
 }
 
 /* ABOUT */
 
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1.5fr;
-    gap:35px;
+.about-box{
+    background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:24px;
+    padding:30px;
 }
 
-.about-text{
-    color:#b2b5bf;
-    font-size:14px;
-    line-height:1.9;
-}
-
-.about-cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-}
-
-.mini-card{
-    padding:22px;
-    min-height:160px;
-    border-radius:17px;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.025);
-}
-
-.mini-icon{
-    font-size:22px;
-    margin-bottom:20px;
-}
-
-.mini-card h3{
-    font-family:"Space Grotesk";
-    font-size:17px;
-    margin-bottom:8px;
-}
-
-.mini-card p{
-    color:var(--muted);
-    font-size:11px;
+.about-box p{
+    color:#b7b8c1;
+    max-width:800px;
 }
 
 /* SKILLS */
@@ -387,1001 +248,820 @@ section{
 .skills{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:13px;
-    margin-top:30px;
+    gap:14px;
 }
 
 .skill{
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.025);
-    border-radius:17px;
-    padding:24px;
+    min-height:130px;
+    padding:22px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    background:rgba(255,255,255,.035);
     transition:.35s;
 }
 
 .skill:hover{
-    transform:translateY(-6px);
-    border-color:rgba(139,124,255,.35);
-    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    transform:translateY(-5px);
+    border-color:#7c70ff;
+    background:rgba(124,112,255,.07);
 }
 
-.skill-symbol{
-    width:45px;
-    height:45px;
-    display:grid;
-    place-items:center;
-    border-radius:13px;
-    background:rgba(139,124,255,.1);
-    font-weight:800;
-    margin-bottom:22px;
-    color:#c8c1ff;
+.skill small{
+    color:#858691;
+    font-size:11px;
 }
 
 .skill h3{
-    font-family:"Space Grotesk";
-    margin-bottom:7px;
-}
-
-.skill p{
-    color:var(--muted);
-    font-size:11px;
+    font-family:'Space Grotesk',sans-serif;
+    margin-top:15px;
 }
 
 /* ACHIEVEMENTS */
 
-.achievements{
+.achievement-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:13px;
-    margin-top:30px;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
 }
 
 .achievement{
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.025);
-    padding:24px;
-    border-radius:17px;
-    position:relative;
-    overflow:hidden;
+    padding:27px;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:21px;
+    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
 }
 
-.achievement::after{
-    content:"";
-    position:absolute;
-    width:80px;
-    height:80px;
-    background:var(--purple);
-    filter:blur(55px);
-    opacity:.13;
-    right:-20px;
-    top:-20px;
-}
-
-.achievement-icon{
-    font-size:21px;
-    margin-bottom:20px;
+.achievement-top{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    align-items:flex-start;
 }
 
 .achievement h3{
-    font-family:"Space Grotesk";
-    margin-bottom:15px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:22px;
 }
 
-.result{
-    font-size:27px;
-    font-family:"Space Grotesk";
+.gpa{
+    color:#a49aff;
     font-weight:700;
+    white-space:nowrap;
+}
+
+.achievement p{
+    color:#92939d;
+    margin:7px 0 20px;
+}
+
+.view-btn{
+    cursor:pointer;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.05);
     color:#fff;
+    padding:9px 14px;
+    border-radius:10px;
+    font-size:12px;
+    transition:.3s;
 }
 
-.result small{
-    color:#777c89;
-    font-size:11px;
-    font-weight:400;
+.view-btn:hover{
+    background:#fff;
+    color:#07090d;
 }
 
-.meta{
+/* ADMISSION */
+
+.admission-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.uni{
     display:flex;
     justify-content:space-between;
-    margin-top:20px;
-    padding-top:14px;
-    border-top:1px solid rgba(255,255,255,.07);
-    color:#747986;
-    font-size:10px;
-}
-
-/* PROJECTS */
-
-.projects{
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:15px;
-    margin-top:30px;
-}
-
-.project-main{
-    min-height:300px;
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.025);
-    border-radius:19px;
-    display:flex;
-    flex-direction:column;
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:35px;
+    padding:18px 20px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.03);
+    border-radius:15px;
+    transition:.3s;
 }
 
-.project-icon{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background:rgba(139,124,255,.1);
-    border:1px solid rgba(139,124,255,.2);
-    font-size:25px;
-    margin-bottom:20px;
+.uni:hover{
+    border-color:#7770ff;
+    transform:translateX(4px);
 }
 
-.project-main h3{
-    font-family:"Space Grotesk";
-    font-size:21px;
-    margin-bottom:8px;
+.uni-name{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
 }
 
-.project-main p{
-    color:var(--muted);
-    font-size:12px;
-    max-width:350px;
-}
-
-.project-list{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.project-small{
-    flex:1;
-    border:1px solid var(--border);
-    border-radius:17px;
-    padding:22px;
-    background:rgba(255,255,255,.025);
-}
-
-.project-small h3{
-    font-family:"Space Grotesk";
-    margin-bottom:7px;
-}
-
-.project-small p{
-    color:var(--muted);
-    font-size:11px;
-}
-
-.tag{
-    display:inline-block;
-    margin-top:14px;
-    font-size:9px;
-    padding:5px 8px;
-    border:1px solid var(--border);
-    border-radius:7px;
-    color:#8e92a0;
-}
-
-/* CONTACT */
-
-.contact{
-    display:grid;
-    grid-template-columns:1.3fr 1fr;
-    gap:20px;
-}
+/* EMAIL */
 
 .contact-box{
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.025);
-    border-radius:17px;
-    padding:24px;
+    padding:45px 30px;
+    text-align:center;
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.1);
+    background:linear-gradient(145deg,rgba(124,112,255,.10),rgba(255,255,255,.025));
 }
 
-.contact-box span{
-    color:#777d8c;
-    font-size:10px;
-    display:block;
-    margin-bottom:8px;
-}
-
-.contact-box strong{
-    font-size:13px;
+.email{
+    display:inline-block;
+    margin-top:12px;
+    color:#b1a8ff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
 }
 
 /* FOOTER */
 
 footer{
-    padding:50px 0;
+    padding:40px 0;
     border-top:1px solid rgba(255,255,255,.07);
-    color:#666b78;
-    font-size:10px;
+    color:#6f7079;
+    font-size:12px;
+    text-align:center;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.78);
+    backdrop-filter:blur(12px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:min(600px,100%);
+    max-height:88vh;
+    overflow:auto;
+    border:1px solid rgba(255,255,255,.12);
+    background:#101218;
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 30px 100px rgba(0,0,0,.7);
+}
+
+.modal-head{
     display:flex;
     justify-content:space-between;
+    align-items:center;
+    margin-bottom:22px;
 }
 
-/* ANIMATION */
-
-.fade{
-    animation:fadeUp .8s ease both;
+.modal-head h2{
+    font-family:'Space Grotesk',sans-serif;
 }
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.close{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+    background:#181a21;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
 }
 
-/* MOBILE */
+.result-card{
+    padding:20px;
+    border-radius:16px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.07);
+    margin-bottom:12px;
+}
 
-@media(max-width:900px){
+.result-card strong{
+    color:#a99fff;
+}
 
-    .nav-links{
-        display:none;
-    }
+.marksheet{
+    width:100%;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.1);
+    margin-top:15px;
+}
 
-    .nav-btn{
-        display:block;
-    }
+/* RESPONSIVE */
+
+@media(max-width:800px){
 
     .hero{
-        grid-template-columns:1fr;
-        gap:45px;
-        padding-top:40px;
+        min-height:auto;
+        padding:70px 0;
     }
 
-    .photo-wrap{
-        max-width:390px;
-        margin:auto;
-        width:100%;
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:40px;
     }
 
     .hero h1{
-        font-size:58px;
+        font-size:50px;
+        letter-spacing:-3px;
     }
 
-    .about-grid{
-        grid-template-columns:1fr;
+    .profile-card{
+        max-width:370px;
+        margin:auto;
     }
 
     .skills{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .achievements{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .projects{
+    .achievement-grid,
+    .admission-list{
         grid-template-columns:1fr;
-    }
-
-    .contact{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:560px){
-
-    nav{
-        height:70px;
-    }
-
-    .nav-btn{
-        padding:9px 12px;
-    }
-
-    .hero{
-        min-height:auto;
-        padding:35px 0 70px;
-    }
-
-    .hero h1{
-        font-size:49px;
-        letter-spacing:-2.8px;
-    }
-
-    .profile-photo{
-        border-radius:22px;
-    }
-
-    .academic-item{
-        width:100%;
-        font-size:11px;
-    }
-
-    .section-card{
-        padding:23px;
-        border-radius:20px;
-    }
-
-    .section-title{
-        font-size:31px;
-    }
-
-    .about-cards{
-        grid-template-columns:1fr;
-    }
-
-    .skills,
-    .achievements{
-        grid-template-columns:1fr;
-    }
-
-    .skill,
-    .achievement{
-        padding:21px;
     }
 
     section{
-        padding:45px 0;
-    }
-
-    footer{
-        flex-direction:column;
-        gap:10px;
+        padding:70px 0;
     }
 }
 
+@media(max-width:450px){
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .department{
+        font-size:16px;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .about-box,
+    .achievement,
+    .contact-box{
+        padding:22px;
+    }
+}
 </style>
 </head>
 
-
 <body>
 
-<div class="container">
-
-<!-- NAVIGATION -->
-
 <nav>
-
-    <div class="logo">
-        PD<span>.</span>
-    </div>
-
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <a href="#contact" class="nav-btn">
-        Let's Connect ↗
-    </a>
-
+<div class="container nav-inner">
+    <div class="logo">P<span>CD.</span></div>
+    <a href="#contact" class="nav-btn">Let's connect ↗</a>
+</div>
 </nav>
 
 
 <!-- HERO -->
 
-<main class="hero">
+<header class="hero">
+<div class="container hero-grid">
 
-    <div class="photo-wrap fade">
+<div>
 
-        <div class="photo-glow"></div>
+    <div class="eyebrow">Personal Portfolio · 2026</div>
 
-        <!-- তোমার ছবি -->
-        <img
-            src="profile.jpg"
-            alt="Priojit Chandra Das"
-            class="profile-photo"
-        >
+    <h1>
+        Priojit
+        <span>Chandra Das.</span>
+    </h1>
 
-        <div class="availability">
-            <span class="dot"></span>
-            Exploring • Learning • Building
-        </div>
-
+    <div class="department">
+        Department of Applied Statistics and Data Science
     </div>
 
-
-    <div class="fade">
-
-        <div class="eyebrow">
-            ✦ Applied Statistics & Data Science
-        </div>
-
-        <h1>
-            Priojit<br>
-            <span>Chandra Das.</span>
-        </h1>
-
-
-        <div class="academic">
-
-            <div class="academic-item">
-                ◈ &nbsp;
-                <strong>
-                    Department of Applied Statistics and Data Science
-                </strong>
-            </div>
-
-            <div class="academic-item">
-                ◇ &nbsp;
-                <strong>
-                    University of Dhaka
-                </strong>
-            </div>
-
-        </div>
-
-
-        <p class="hero-desc">
-            An undergraduate student exploring statistics, data,
-            programming and technology — turning curiosity into
-            meaningful ideas and practical solutions.
-        </p>
-
-
-        <div class="buttons">
-
-            <a href="#projects" class="btn btn-primary">
-                Explore My Work ↗
-            </a>
-
-            <a href="#contact" class="btn btn-secondary">
-                Let's Connect
-            </a>
-
-        </div>
-
-
-        <!-- SOCIAL LINKS -->
-
-        <div class="socials">
-
-            <!-- এখানে নিজের links বসাবে -->
-
-            <a
-                href="https://github.com/priojitdas"
-                class="social"
-                target="_blank"
-                title="GitHub"
-            >
-                GH
-            </a>
-
-            <a
-                href="#"
-                class="social"
-                target="_blank"
-                title="LinkedIn"
-            >
-                in
-            </a>
-
-            <a
-                href="#"
-                class="social"
-                target="_blank"
-                title="Facebook"
-            >
-                f
-            </a>
-
-            <a
-                href="#"
-                class="social"
-                target="_blank"
-                title="Instagram"
-            >
-                ◎
-            </a>
-
-            <a
-                href="mailto:your.email@example.com"
-                class="social"
-                title="Email"
-            >
-                @
-            </a>
-
-        </div>
-
+    <div class="university">
+        University of Dhaka
     </div>
 
-</main>
+    <div class="hero-buttons">
+        <a href="#about" class="btn primary">Explore portfolio ↗</a>
+        <a href="#contact" class="btn">Contact me</a>
+    </div>
 
+</div>
+
+
+<div class="profile-card">
+
+    <!-- তোমার profile.jpg এখানে থাকবে -->
+    <img src="profile.jpg" alt="Priojit Chandra Das">
+
+    <div class="profile-tag">
+        Applied Statistics & Data Science · University of Dhaka
+    </div>
+
+</div>
+
+</div>
+</header>
 
 
 <!-- ABOUT -->
 
 <section id="about">
+<div class="container">
 
-<div class="section-card">
+    <div class="section-label">01 · About</div>
+    <div class="section-title">A little about me.</div>
 
-    <div class="section-label">
-        ✦ About Me
-    </div>
-
-    <div class="about-grid">
-
-        <div>
-
-            <h2 class="section-title">
-                Get to know me.
-            </h2>
-
-            <p class="about-text">
-                I am Priojit Chandra Das, an undergraduate student
-                of Applied Statistics and Data Science at the
-                University of Dhaka.
-                <br><br>
-                I am interested in learning programming, statistics,
-                data analysis and building useful digital experiences.
-                This portfolio will grow along with my journey.
-            </p>
-
-        </div>
-
-
-        <div class="about-cards">
-
-            <div class="mini-card">
-
-                <div class="mini-icon">◫</div>
-
-                <h3>Learning</h3>
-
-                <p>
-                    Always learning new concepts,
-                    tools and technologies.
-                </p>
-
-            </div>
-
-
-            <div class="mini-card">
-
-                <div class="mini-icon">◈</div>
-
-                <h3>Analyzing</h3>
-
-                <p>
-                    Exploring statistics and
-                    data-driven thinking.
-                </p>
-
-            </div>
-
-
-            <div class="mini-card">
-
-                <div class="mini-icon">&lt;/&gt;</div>
-
-                <h3>Building</h3>
-
-                <p>
-                    Turning ideas into practical
-                    digital projects.
-                </p>
-
-            </div>
-
-        </div>
-
+    <div class="about-box">
+        <p>
+            I am Priojit Chandra Das, a student of the Department of
+            Applied Statistics and Data Science at the University of Dhaka.
+            I am interested in statistics, data, programming and building
+            practical solutions through technology.
+        </p>
     </div>
 
 </div>
-
 </section>
-
 
 
 <!-- SKILLS -->
 
-<section id="skills">
+<section>
+<div class="container">
 
-<div class="section-card">
-
-    <div class="section-label">
-        ✦ Skills
-    </div>
-
-    <h2 class="section-title">
-        What I work with.
-    </h2>
-
-    <p class="section-desc">
-        Technologies and tools I am currently learning and working with.
-    </p>
-
+    <div class="section-label">02 · Skills</div>
+    <div class="section-title">Tools I work with.</div>
 
     <div class="skills">
 
         <div class="skill">
-
-            <div class="skill-symbol">
-                C
-            </div>
-
+            <small>PROGRAMMING</small>
             <h3>C</h3>
-
-            <p>
-                Programming fundamentals
-                & problem solving
-            </p>
-
         </div>
 
-
         <div class="skill">
-
-            <div class="skill-symbol">
-                SQL
-            </div>
-
+            <small>DATABASE</small>
             <h3>SQL</h3>
-
-            <p>
-                Database queries
-                & data management
-            </p>
-
         </div>
 
-
         <div class="skill">
-
-            <div class="skill-symbol">
-                Py
-            </div>
-
+            <small>PROGRAMMING</small>
             <h3>Python</h3>
-
-            <p>
-                Programming &
-                data analysis
-            </p>
-
         </div>
 
-
         <div class="skill">
-
-            <div class="skill-symbol">
-                &lt;/&gt;
-            </div>
-
+            <small>WEB</small>
             <h3>HTML</h3>
-
-            <p>
-                Web structure
-                & modern markup
-            </p>
-
         </div>
 
     </div>
 
 </div>
-
 </section>
-
 
 
 <!-- ACHIEVEMENTS -->
 
 <section id="achievements">
+<div class="container">
 
-<div class="section-card">
+    <div class="section-label">03 · Achievements</div>
+    <div class="section-title">Academic milestones.</div>
 
-    <div class="section-label">
-        ✦ Achievements
-    </div>
+    <div class="achievement-grid">
 
-    <h2 class="section-title">
-        Academic milestones.
-    </h2>
+        <!-- HSC -->
 
-    <p class="section-desc">
-        A place to showcase academic results, admission achievements
-        and milestones.
-    </p>
+        <div class="achievement">
 
+            <div class="achievement-top">
 
-    <div class="achievements">
+                <div>
+                    <h3>HSC</h3>
+                    <p>Dhaka Board · With Scholarship</p>
+                </div>
+
+                <div class="gpa">GPA 5.00</div>
+
+            </div>
+
+            <button class="view-btn"
+                onclick="openModal('hscModal')">
+                View Marksheet ↗
+            </button>
+
+        </div>
 
 
         <!-- SSC -->
 
         <div class="achievement">
 
-            <div class="achievement-icon">
-                🎓
-            </div>
+            <div class="achievement-top">
 
-            <h3>SSC</h3>
+                <div>
+                    <h3>SSC</h3>
+                    <p>Barishal Board · With Scholarship</p>
+                </div>
 
-            <!-- পরে নিজের result বসাবে -->
-
-            <div class="result">
-                Add Result
-                <small>/ 5.00</small>
-            </div>
-
-            <div class="meta">
-                <span>Board</span>
-                <span>Year</span>
-            </div>
-
-        </div>
-
-
-        <!-- HSC -->
-
-        <div class="achievement">
-
-            <div class="achievement-icon">
-                🎓
-            </div>
-
-            <h3>HSC</h3>
-
-            <div class="result">
-                Add Result
-                <small>/ 5.00</small>
-            </div>
-
-            <div class="meta">
-                <span>Board</span>
-                <span>Year</span>
-            </div>
-
-        </div>
-
-
-        <!-- ADMISSION -->
-
-        <div class="achievement">
-
-            <div class="achievement-icon">
-                ✦
-            </div>
-
-            <h3>Admission Test</h3>
-
-            <div class="result">
-                Add Result
-            </div>
-
-            <div class="meta">
-                <span>Exam</span>
-                <span>Year</span>
-            </div>
-
-        </div>
-
-
-        <!-- UNIVERSITY -->
-
-        <div class="achievement">
-
-            <div class="achievement-icon">
-                ◆
-            </div>
-
-            <h3>University</h3>
-
-            <div class="result" style="font-size:19px;">
-                University of Dhaka
-            </div>
-
-            <div class="meta">
-                <span>ASDS</span>
-                <span>Current</span>
-            </div>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<div class="section-card">
-
-    <div class="section-label">
-        ✦ Projects
-    </div>
-
-    <h2 class="section-title">
-        Work in progress.
-    </h2>
-
-    <p class="section-desc">
-        Projects will appear here as I build and learn.
-    </p>
-
-
-    <div class="projects">
-
-
-        <div class="project-main">
-
-            <div class="project-icon">
-                ✦
-            </div>
-
-            <h3>
-                Projects are coming soon.
-            </h3>
-
-            <p>
-                I am currently working on my first set of projects.
-                Stay tuned for updates.
-            </p>
-
-        </div>
-
-
-        <div class="project-list">
-
-            <div class="project-small">
-
-                <h3>
-                    Data Analysis
-                </h3>
-
-                <p>
-                    Statistical analysis,
-                    visualization and data projects.
-                </p>
-
-                <span class="tag">
-                    COMING SOON
-                </span>
+                <div class="gpa">GPA 5.00</div>
 
             </div>
 
-
-            <div class="project-small">
-
-                <h3>
-                    Web Development
-                </h3>
-
-                <p>
-                    Personal websites and
-                    interactive web experiences.
-                </p>
-
-                <span class="tag">
-                    COMING SOON
-                </span>
-
-            </div>
+            <button class="view-btn"
+                onclick="openModal('sscModal')">
+                View Marksheet ↗
+            </button>
 
         </div>
 
     </div>
 
 </div>
-
 </section>
 
+
+<!-- ADMISSION -->
+
+<section>
+<div class="container">
+
+    <div class="section-label">04 · Admission</div>
+    <div class="section-title">University admission journey.</div>
+
+    <div class="admission-list">
+
+        <div class="uni">
+            <span class="uni-name">University of Dhaka</span>
+            <button class="view-btn" onclick="openModal('duModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">BUET</span>
+            <button class="view-btn" onclick="openModal('buetModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">KUET</span>
+            <button class="view-btn" onclick="openModal('kuetModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">RUET</span>
+            <button class="view-btn" onclick="openModal('ruetModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">BUTEX</span>
+            <button class="view-btn" onclick="openModal('butexModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">Jahangirnagar University</span>
+            <button class="view-btn" onclick="openModal('juModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">Agriculture Universities</span>
+            <button class="view-btn" onclick="openModal('agriModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">Jagannath University</span>
+            <button class="view-btn" onclick="openModal('jnuModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">Rajshahi University</span>
+            <button class="view-btn" onclick="openModal('ruModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">Chittagong University</span>
+            <button class="view-btn" onclick="openModal('cuModal')">View Result ↗</button>
+        </div>
+
+        <div class="uni">
+            <span class="uni-name">GST</span>
+            <button class="view-btn" onclick="openModal('gstModal')">View Result ↗</button>
+        </div>
+
+    </div>
+
+</div>
+</section>
 
 
 <!-- CONTACT -->
 
 <section id="contact">
+<div class="container">
 
-<div class="section-card">
+    <div class="contact-box">
 
-    <div class="section-label">
-        ✦ Contact
-    </div>
+        <div class="section-label">05 · Contact</div>
 
-    <div class="contact">
-
-        <div>
-
-            <h2 class="section-title">
-                Let's Connect.
-            </h2>
-
-            <p class="section-desc">
-                Have an idea, opportunity or simply want to connect?
-                Feel free to reach out.
-            </p>
-
-            <br>
-
-            <div class="socials">
-
-                <a href="#" class="social">
-                    GH
-                </a>
-
-                <a href="#" class="social">
-                    in
-                </a>
-
-                <a href="#" class="social">
-                    f
-                </a>
-
-                <a href="#" class="social">
-                    ◎
-                </a>
-
-            </div>
-
+        <div class="section-title">
+            Let's build something<br>
+            worth remembering.
         </div>
 
+        <p style="color:#888995;">
+            Have an idea, opportunity or something interesting to discuss?
+        </p>
 
-        <div>
-
-            <div class="contact-box">
-
-                <span>EMAIL</span>
-
-                <strong>
-                    your.email@example.com
-                </strong>
-
-            </div>
-
-            <br>
-
-            <div class="contact-box">
-
-                <span>LOCATION</span>
-
-                <strong>
-                    Dhaka, Bangladesh
-                </strong>
-
-            </div>
-
-        </div>
+        <a class="email" href="mailto:pdas32@isrt.ac.bd">
+            pdas32@isrt.ac.bd ↗
+        </a>
 
     </div>
 
 </div>
-
 </section>
 
 
-
-<!-- FOOTER -->
-
 <footer>
-
-    <span>
-        © 2026 Priojit Chandra Das. All rights reserved.
-    </span>
-
-    <span>
-        Designed & Built with ✦
-    </span>
-
+    © 2026 Priojit Chandra Das · University of Dhaka
 </footer>
 
 
+<!-- ================= MODALS ================= -->
+
+
+<!-- HSC -->
+
+<div class="modal" id="hscModal">
+
+<div class="modal-box">
+
+<div class="modal-head">
+    <h2>HSC · Academic Record</h2>
+    <button class="close" onclick="closeModal('hscModal')">×</button>
 </div>
+
+<div class="result-card">
+
+    <strong>GPA 5.00</strong>
+
+    <p>
+        Dhaka Board<br>
+        With Scholarship
+    </p>
+
+    <!-- পরে marksheet image বসাবে -->
+    <img
+        class="marksheet"
+        src="hsc-marksheet.jpg"
+        alt="HSC Marksheet">
+
+</div>
+
+</div>
+</div>
+
+
+<!-- SSC -->
+
+<div class="modal" id="sscModal">
+
+<div class="modal-box">
+
+<div class="modal-head">
+    <h2>SSC · Academic Record</h2>
+    <button class="close" onclick="closeModal('sscModal')">×</button>
+</div>
+
+<div class="result-card">
+
+    <strong>GPA 5.00</strong>
+
+    <p>
+        Barishal Board<br>
+        With Scholarship
+    </p>
+
+    <!-- পরে marksheet image বসাবে -->
+    <img
+        class="marksheet"
+        src="ssc-marksheet.jpg"
+        alt="SSC Marksheet">
+
+</div>
+
+</div>
+</div>
+
+
+<!-- ADMISSION MODALS -->
+
+<div class="modal" id="duModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>University of Dhaka</h2>
+<button class="close" onclick="closeModal('duModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="buetModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>BUET</h2>
+<button class="close" onclick="closeModal('buetModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="kuetModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>KUET</h2>
+<button class="close" onclick="closeModal('kuetModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="ruetModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>RUET</h2>
+<button class="close" onclick="closeModal('ruetModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="butexModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>BUTEX</h2>
+<button class="close" onclick="closeModal('butexModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="juModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>Jahangirnagar University</h2>
+<button class="close" onclick="closeModal('juModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="agriModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>Agriculture Universities</h2>
+<button class="close" onclick="closeModal('agriModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="jnuModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>Jagannath University</h2>
+<button class="close" onclick="closeModal('jnuModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="ruModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>Rajshahi University</h2>
+<button class="close" onclick="closeModal('ruModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="cuModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>Chittagong University</h2>
+<button class="close" onclick="closeModal('cuModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<div class="modal" id="gstModal">
+<div class="modal-box">
+<div class="modal-head">
+<h2>GST Admission</h2>
+<button class="close" onclick="closeModal('gstModal')">×</button>
+</div>
+<div class="result-card">
+<strong>Admission Test Result</strong>
+<p>Result details can be added here later.</p>
+</div>
+</div>
+</div>
+
+
+<script>
+
+function openModal(id){
+    document.getElementById(id).classList.add("active");
+    document.body.style.overflow="hidden";
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove("active");
+    document.body.style.overflow="auto";
+}
+
+/* বাইরে click করলে modal বন্ধ হবে */
+
+document.querySelectorAll(".modal").forEach(modal=>{
+
+    modal.addEventListener("click",function(e){
+
+        if(e.target === modal){
+            modal.classList.remove("active");
+            document.body.style.overflow="auto";
+        }
+
+    });
+
+});
+
+/* ESC চাপলেও বন্ধ হবে */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape"){
+
+        document.querySelectorAll(".modal").forEach(modal=>{
+            modal.classList.remove("active");
+        });
+
+        document.body.style.overflow="auto";
+    }
+
+});
+
+</script>
 
 </body>
 </html>
