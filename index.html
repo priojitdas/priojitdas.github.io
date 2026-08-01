@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Priojit Chandra Das — Portfolio</title>
+
+<meta name="description" content="Portfolio of Priojit Chandra Das — Applied Statistics and Data Science student at the University of Dhaka.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#07080b;
+    --bg2:#0b0d12;
+    --card:rgba(255,255,255,.045);
+    --border:rgba(255,255,255,.10);
+    --text:#f4f5f7;
+    --muted:#969ba8;
+    --accent:#8da2ff;
+    --accent2:#c5a7ff;
+    --max:1180px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+        radial-gradient(circle at 75% 10%, rgba(100,120,255,.12), transparent 28%),
+        radial-gradient(circle at 15% 65%, rgba(170,110,255,.07), transparent 25%),
+        var(--bg);
+    color:var(--text);
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.035;
+    background-image:
+        linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+    background-size:80px 80px;
+    mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(var(--max), calc(100% - 48px));
+    margin:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:100;
+    padding:22px 0;
+    background:linear-gradient(to bottom,rgba(7,8,11,.9),transparent);
+    backdrop-filter:blur(8px);
+}
+
+.nav-inner{
+    width:min(var(--max),calc(100% - 48px));
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:"Manrope",sans-serif;
+    font-weight:800;
+    font-size:18px;
+    letter-spacing:-.5px;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    color:#a9adb7;
+    font-size:13px;
+}
+
+.nav-links a{
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.nav-button{
+    border:1px solid var(--border);
+    padding:9px 16px;
+    border-radius:30px;
+    font-size:12px;
+    background:rgba(255,255,255,.035);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    align-items:center;
+    gap:70px;
+    padding-top:100px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    color:#aeb4c2;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:28px;
+    height:1px;
+    background:var(--accent);
+}
+
+.hero h1{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(52px,7vw,94px);
+    line-height:.94;
+    letter-spacing:-5px;
+    font-weight:800;
+    max-width:850px;
+}
+
+.hero h1 .outline{
+    color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,.48);
+}
+
+.hero-description{
+    max-width:570px;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.8;
+    margin-top:30px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:13px;
+    margin-top:34px;
+}
+
+.primary{
+    padding:13px 21px;
+    border-radius:30px;
+    background:#f4f5f7;
+    color:#08090c;
+    font-weight:700;
+    font-size:13px;
+    transition:.25s;
+}
+
+.primary:hover{
+    transform:translateY(-2px);
+}
+
+.secondary{
+    padding:13px 21px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    color:#d4d7df;
+    font-size:13px;
+    background:rgba(255,255,255,.025);
+}
+
+/* PROFILE */
+
+.profile-wrap{
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.profile-glow{
+    position:absolute;
+    width:330px;
+    height:330px;
+    background:rgba(126,143,255,.18);
+    filter:blur(80px);
+    border-radius:50%;
+}
+
+.profile-card{
+    position:relative;
+    width:min(390px,100%);
+    padding:10px;
+    border:1px solid rgba(255,255,255,.13);
+    background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));
+    border-radius:28px;
+    box-shadow:0 30px 100px rgba(0,0,0,.5);
+}
+
+.profile-card img{
+    width:100%;
+    display:block;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:20px;
+    filter:saturate(.9);
+}
+
+.profile-label{
+    position:absolute;
+    left:27px;
+    bottom:27px;
+    right:27px;
+    padding:15px 17px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(10,11,15,.72);
+    backdrop-filter:blur(14px);
+    border-radius:16px;
+}
+
+.profile-label small{
+    color:#999fac;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1.3px;
+}
+
+.profile-label strong{
+    display:block;
+    margin-top:4px;
+    font-size:14px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:120px 0;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+}
+
+.section-number{
+    color:var(--accent);
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(34px,5vw,55px);
+    letter-spacing:-2.5px;
+}
+
+.section-sub{
+    color:var(--muted);
+    max-width:360px;
+    line-height:1.7;
+    font-size:13px;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.glass{
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:22px;
+    padding:32px;
+}
+
+.about-text{
+    color:#b1b5bf;
+    font-size:17px;
+    line-height:1.9;
+}
+
+.about-text strong{
+    color:white;
+}
+
+.stat-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.stat{
+    min-height:150px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.stat-number{
+    font-family:"Manrope";
+    font-size:38px;
+    font-weight:800;
+}
+
+.stat-label{
+    color:#858b99;
+    font-size:12px;
+}
+
+/* EDUCATION */
+
+.education{
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:30px 0;
+}
+
+.education-row{
+    display:grid;
+    grid-template-columns:150px 1fr auto;
+    gap:30px;
+    align-items:center;
+}
+
+.education-year{
+    color:#7f8592;
+    font-size:12px;
+}
+
+.education-title{
+    font-family:"Manrope";
+    font-size:22px;
+    font-weight:700;
+}
+
+.education-desc{
+    color:#858b98;
+    font-size:13px;
+    margin-top:6px;
+}
+
+.education-badge{
+    border:1px solid var(--border);
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:11px;
+    color:#aeb3be;
+}
+
+/* SKILLS */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.skill{
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+    border-color:rgba(141,162,255,.4);
+}
+
+.skill-icon{
+    font-family:"Manrope";
+    font-size:28px;
+    color:#d7d9df;
+}
+
+.skill-name{
+    font-family:"Manrope";
+    font-size:18px;
+    font-weight:700;
+}
+
+.skill-type{
+    color:#737987;
+    font-size:11px;
+    margin-top:4px;
+}
+
+/* PROJECTS */
+
+.projects-empty{
+    min-height:330px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border:1px dashed rgba(255,255,255,.14);
+    border-radius:24px;
+    background:rgba(255,255,255,.018);
+}
+
+.projects-empty h3{
+    font-family:"Manrope";
+    font-size:24px;
+}
+
+.projects-empty p{
+    color:#777d8a;
+    max-width:400px;
+    margin:10px auto 0;
+    line-height:1.7;
+    font-size:13px;
+}
+
+/* CONTACT */
+
+.contact{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--border);
+    border-radius:30px;
+    padding:70px;
+    background:
+        radial-gradient(circle at 80% 20%,rgba(141,162,255,.14),transparent 35%),
+        rgba(255,255,255,.025);
+}
+
+.contact h2{
+    font-family:"Manrope";
+    font-size:clamp(40px,6vw,72px);
+    letter-spacing:-3px;
+    max-width:700px;
+}
+
+.contact p{
+    color:#8b909c;
+    margin-top:18px;
+    max-width:500px;
+    line-height:1.7;
+}
+
+.socials{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:32px;
+}
+
+.social{
+    border:1px solid var(--border);
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:12px;
+    color:#c3c6ce;
+    background:rgba(255,255,255,.025);
+    transition:.25s;
+}
+
+.social:hover{
+    border-color:var(--accent);
+    color:white;
+}
+
+/* FOOTER */
+
+footer{
+    padding:50px 0;
+    color:#686e7b;
+    font-size:11px;
+    display:flex;
+    justify-content:space-between;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        gap:55px;
+        padding-top:130px;
+    }
+
+    .hero h1{
+        font-size:clamp(48px,14vw,72px);
+        letter-spacing:-3px;
+    }
+
+    .profile-wrap{
+        order:2;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .education-row{
+        grid-template-columns:1fr;
+        gap:8px;
+    }
+
+    .education-badge{
+        width:max-content;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-sub{
+        margin-top:15px;
+    }
+
+    .contact{
+        padding:40px 25px;
+    }
+
+    footer{
+        gap:20px;
+        flex-direction:column;
+    }
+}
+
+@media(max-width:480px){
+
+    .container,
+    .nav-inner{
+        width:min(var(--max),calc(100% - 30px));
+    }
+
+    section{
+        padding:90px 0;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+            P<span>.</span>D
+        </a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </div>
+
+        <a href="#contact" class="nav-button">Let's connect</a>
+
+    </div>
+</nav>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="container hero" id="home">
+
+    <div>
+
+        <div class="eyebrow">
+            Applied Statistics & Data Science
+        </div>
+
+        <h1>
+            Priojit<br>
+            <span class="outline">Chandra Das</span>
+        </h1>
+
+        <p class="hero-description">
+            Student at the University of Dhaka, exploring the intersection
+            of statistics, data, programming and technology.
+            Currently building the foundation for a future in data-driven work.
+        </p>
+
+        <div class="hero-actions">
+            <a class="primary" href="#about">Explore my profile ↗</a>
+            <a class="secondary" href="#contact">Connect</a>
+        </div>
+
+    </div>
+
+
+    <div class="profile-wrap">
+
+        <div class="profile-glow"></div>
+
+        <div class="profile-card">
+
+            <!-- YOUR PHOTO -->
+            <img src="profile.jpg" alt="Priojit Chandra Das">
+
+            <div class="profile-label">
+                <small>University of Dhaka</small>
+                <strong>Applied Statistics & Data Science</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="container" id="about">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-number">01 — ABOUT</div>
+            <h2 class="section-title">A little about me.</h2>
+        </div>
+
+        <p class="section-sub">
+            Learning, experimenting and gradually turning data into meaningful ideas.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="glass about-text">
+
+            I'm <strong>Priojit Chandra Das</strong>, an Applied Statistics
+            and Data Science student at the <strong>University of Dhaka</strong>.
+
+            <br><br>
+
+            My interests sit around programming, statistics, data and
+            problem solving. I'm currently developing my technical foundation
+            and looking forward to turning what I learn into real projects.
+
+        </div>
+
+
+        <div class="stat-grid">
+
+            <div class="glass stat">
+                <div class="stat-number">04</div>
+                <div class="stat-label">Core technical skills</div>
+            </div>
+
+            <div class="glass stat">
+                <div class="stat-number">01</div>
+                <div class="stat-label">University — Dhaka</div>
+            </div>
+
+            <div class="glass stat">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Things left to learn</div>
+            </div>
+
+            <div class="glass stat">
+                <div class="stat-number">01</div>
+                <div class="stat-label">Portfolio — just the beginning</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section class="container" id="education">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-number">02 — EDUCATION</div>
+            <h2 class="section-title">Where I'm learning.</h2>
+        </div>
+
+    </div>
+
+
+    <div class="education">
+
+        <div class="education-row">
+
+            <div class="education-year">
+                CURRENT
+            </div>
+
+            <div>
+
+                <div class="education-title">
+                    University of Dhaka
+                </div>
+
+                <div class="education-desc">
+                    Department of Applied Statistics and Data Science
+                </div>
+
+            </div>
+
+            <div class="education-badge">
+                Undergraduate
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="container" id="skills">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-number">03 — SKILLS</div>
+            <h2 class="section-title">Tools I work with.</h2>
+        </div>
+
+        <p class="section-sub">
+            My current technical toolkit. This section can grow as I learn.
+        </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+        <div class="glass skill">
+
+            <div class="skill-icon">C</div>
+
+            <div>
+                <div class="skill-name">C</div>
+                <div class="skill-type">Programming</div>
+            </div>
+
+        </div>
+
+
+        <div class="glass skill">
+
+            <div class="skill-icon">SQL</div>
+
+            <div>
+                <div class="skill-name">SQL</div>
+                <div class="skill-type">Data & Databases</div>
+            </div>
+
+        </div>
+
+
+        <div class="glass skill">
+
+            <div class="skill-icon">Py</div>
+
+            <div>
+                <div class="skill-name">Python</div>
+                <div class="skill-type">Programming & Data</div>
+            </div>
+
+        </div>
+
+
+        <div class="glass skill">
+
+            <div class="skill-icon">&lt;/&gt;</div>
+
+            <div>
+                <div class="skill-name">HTML</div>
+                <div class="skill-type">Web Development</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="container" id="projects">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-number">04 — PROJECTS</div>
+            <h2 class="section-title">Work in progress.</h2>
+        </div>
+
+        <p class="section-sub">
+            This space is ready. The projects will come next.
+        </p>
+
+    </div>
+
+
+    <div class="projects-empty">
+
+        <div>
+
+            <h3>Projects are coming.</h3>
+
+            <p>
+                This section is intentionally kept ready for future
+                programming, data science and statistical projects.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="container" id="contact">
+
+    <div class="contact">
+
+        <div class="section-number">05 — CONNECT</div>
+
+        <h2>
+            Let's build something
+            worth remembering.
+        </h2>
+
+        <p>
+            Social and professional links will live here.
+            They'll be added once the portfolio is ready to go public.
+        </p>
+
+
+        <div class="socials">
+
+            <!-- ADD YOUR LINKS LATER -->
+
+            <a class="social" href="#" target="_blank">
+                GitHub ↗
+            </a>
+
+            <a class="social" href="#" target="_blank">
+                LinkedIn ↗
+            </a>
+
+            <a class="social" href="#" target="_blank">
+                Facebook ↗
+            </a>
+
+            <a class="social" href="#" target="_blank">
+                Instagram ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer class="container">
+
+    <div>
+        © 2026 Priojit Chandra Das
+    </div>
+
+    <div>
+        Built with curiosity & code.
+    </div>
+
+</footer>
+
+</body>
+</html>
